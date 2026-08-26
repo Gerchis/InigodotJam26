@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cfws48tibs5ht"]
+
+[ext_resource type="PackedScene" uid="uid://cxj2h6tlhkml4" path="res://maps/test_map/test_map.tscn" id="1_s7pv5"]
+
+[node name="GameView" type="Control" unique_id=59536798]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=836572573]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1805635950]
+handle_input_locally = false
+size = Vector2i(512, 300)
+render_target_update_mode = 4
+
+[node name="TestMap" parent="SubViewportContainer/SubViewport" unique_id=1489690230 instance=ExtResource("1_s7pv5")]

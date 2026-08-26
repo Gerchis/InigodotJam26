@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rlp7r11siwpd"
-path.s3tc="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.s3tc.ctex"
+uid="uid://5hc57l6parl4"
+path.s3tc="res://.godot/imported/paperPlane(0.0_paletaColor_001.png-49d752704dc2a7d8bb93b74f81511a6c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "3c7f6a2bfb72b76e9c3553ca6abeb3e5"
+}
 
 [deps]
 
-source_file="res://icon.svg"
-dest_files=["res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.s3tc.ctex"]
+source_file="res://assets/gltf_files/paper_plane/paperPlane(0.0_paletaColor_001.png"
+dest_files=["res://.godot/imported/paperPlane(0.0_paletaColor_001.png-49d752704dc2a7d8bb93b74f81511a6c.s3tc.ctex"]
 
 [params]
 
@@ -39,6 +42,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=0
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
