@@ -19,7 +19,7 @@ nodes/root_script=null
 mesh_library/use_node_names_as_mesh_names=false
 array_mesh/deduplicate_surfaces=true
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=2.0
 nodes/import_as_skeleton_bones=false
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
@@ -40,6 +40,13 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={
+"materials": {
+"Txt_Jam": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/base_material/base_material.tres",
+"use_external/path": "uid://bt83cni754be4"
+}
+},
 "meshes": {
 "cityBuild(0_0_2)_Cube_004": {
 "generate/lightmap_uv": 0,

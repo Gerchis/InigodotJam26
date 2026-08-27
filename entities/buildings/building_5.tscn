@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bx02448onab6x"]
 
 [ext_resource type="ArrayMesh" uid="uid://b5u0y5eoeywfu" path="res://assets/gltf_files/buildings/cityBuild(0_0_2)_Cube_017.res" id="1_jho8t"]
-[ext_resource type="ArrayMesh" uid="uid://cinpr8ra1h8a5" path="res://assets/gltf_files/buildings/cityBuild(0_0_2)_Cube_016.res" id="2_v3qsf"]
+[ext_resource type="ArrayMesh" uid="uid://dfvwkjjkx4qc6" path="res://assets/gltf_files/buildings/cityBuild(0_0_2)_Cube_016.res" id="2_v3qsf"]
 
 [node name="Building5" type="Node3D" unique_id=2079463953]
 

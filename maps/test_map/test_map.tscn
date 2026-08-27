@@ -17,11 +17,11 @@ ambient_light_source = 3
 ambient_light_color = Color(1, 1, 1, 1)
 reflected_light_source = 2
 fog_enabled = true
-fog_light_color = Color(0.2901961, 0.1882353, 0.32156864, 1)
+fog_light_color = Color(1, 1, 1, 1)
 fog_density = 0.0
 fog_sky_affect = 0.0
-fog_height = -70.0
-fog_height_density = 0.7
+fog_height = -60.0
+fog_height_density = 0.15
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_j4bll"]
 size = Vector2(500, 500)
@@ -47,6 +47,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0075627863, 0.1521711, -0.
 script = ExtResource("6_w0mp8")
 environment_root = NodePath("../EnvironmentRoot")
 plane = NodePath("../PaperPlane")
+building_spawner_chance = 10.0
+building_spawner_max_tries = 10
 metadata/_custom_type_script = "uid://b1lj0dmcnroux"
 
 [node name="EnvironmentRoot" type="Node3D" parent="." unique_id=866256436]

@@ -71,5 +71,5 @@ func spawn_building(in_range: bool = true) -> void:
 	if not in_range:
 		x_pos = random_x * building_spawner_outer_x_range
 	
-	buiding_instance.global_position = Vector3(x_pos, building_spawner_y, building_spawner_z)
 	environment_root.add_child(buiding_instance)
+	buiding_instance.global_position = Vector3(x_pos, building_spawner_y, building_spawner_z)
