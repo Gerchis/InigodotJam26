@@ -3,6 +3,9 @@
 [ext_resource type="Sky" uid="uid://jmrkhn2lyrix" path="res://assets/binbun_sky/skies/stylized/stylized_sky_02.tres" id="1_2q8rh"]
 [ext_resource type="PackedScene" uid="uid://c6e2dukinf7d8" path="res://entities/plane/paper_plane.tscn" id="2_dq0fv"]
 [ext_resource type="PackedScene" uid="uid://d3vany3uxpjkl" path="res://entities/player/player.tscn" id="3_dq0fv"]
+[ext_resource type="PackedScene" uid="uid://c1wbr78i7pnj3" path="res://entities/buildings/building_1.tscn" id="4_wmrws"]
+[ext_resource type="PackedScene" uid="uid://8qpxbmbxv8np" path="res://entities/buildings/building_2.tscn" id="5_w0mp8"]
+[ext_resource type="Script" uid="uid://b1lj0dmcnroux" path="res://entities/map_scroller/map_scroller.gd" id="6_w0mp8"]
 
 [sub_resource type="Environment" id="Environment_dq0fv"]
 background_mode = 2
@@ -10,10 +13,13 @@ sky = ExtResource("1_2q8rh")
 ambient_light_source = 3
 ambient_light_color = Color(1, 1, 1, 1)
 reflected_light_source = 2
-glow_enabled = true
+fog_enabled = true
+fog_sky_affect = 0.0
+fog_height = -70.0
+fog_height_density = 1.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_gxwvi"]
-size = Vector3(2.5288086, 5.8134155, 1)
+[sub_resource type="PlaneMesh" id="PlaneMesh_j4bll"]
+size = Vector2(500, 500)
 
 [node name="TestMap" type="Node3D" unique_id=1489690230]
 
@@ -32,10 +38,21 @@ transform = Transform3D(-1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, -1, 0,
 [node name="Player" parent="." unique_id=860884995 instance=ExtResource("3_dq0fv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36338028, 0.1521711, -0.39791897)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=734260534]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1422234, 1.0121155, 3.438825)
-mesh = SubResource("BoxMesh_gxwvi")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2075273702]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -84.92966, 185.49124)
+mesh = SubResource("PlaneMesh_j4bll")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=639730941]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.714573, 1.0121155, 1.8882561)
-mesh = SubResource("BoxMesh_gxwvi")
+[node name="MapScroller" type="Node" parent="." unique_id=1766442072 node_paths=PackedStringArray("environment_root", "plane")]
+script = ExtResource("6_w0mp8")
+environment_root = NodePath("../EnvironmentRoot")
+plane = NodePath("../PaperPlane")
+metadata/_custom_type_script = "uid://b1lj0dmcnroux"
+
+[node name="EnvironmentRoot" type="Node3D" parent="." unique_id=866256436]
+unique_name_in_owner = true
+
+[node name="Building1" parent="EnvironmentRoot" unique_id=120542104 instance=ExtResource("4_wmrws")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.113731, -61.7082, 10.231432)
+
+[node name="Building2" parent="EnvironmentRoot" unique_id=1065891020 instance=ExtResource("5_w0mp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.496223, -76.68172, 12.416496)
