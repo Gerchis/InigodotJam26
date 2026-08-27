@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://cxj2h6tlhkml4"]
 
 [ext_resource type="Sky" uid="uid://jmrkhn2lyrix" path="res://assets/binbun_sky/skies/stylized/stylized_sky_02.tres" id="1_2q8rh"]
-[ext_resource type="ArrayMesh" uid="uid://djaa2i8v7ndd6" path="res://assets/gltf_files/paper_plane/paperPlane(0_0_1)_Plane.res" id="1_40h2x"]
+[ext_resource type="PackedScene" uid="uid://c6e2dukinf7d8" path="res://entities/plane/paper_plane.tscn" id="2_dq0fv"]
+[ext_resource type="PackedScene" uid="uid://d3vany3uxpjkl" path="res://entities/player/player.tscn" id="3_dq0fv"]
 
 [sub_resource type="Environment" id="Environment_dq0fv"]
 background_mode = 2
@@ -11,6 +12,9 @@ ambient_light_color = Color(1, 1, 1, 1)
 reflected_light_source = 2
 glow_enabled = true
 
+[sub_resource type="BoxMesh" id="BoxMesh_gxwvi"]
+size = Vector3(2.5288086, 5.8134155, 1)
+
 [node name="TestMap" type="Node3D" unique_id=1489690230]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1064382664]
@@ -19,9 +23,19 @@ environment = SubResource("Environment_dq0fv")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1537562499]
 transform = Transform3D(1, 0, 0, 0, -3.577464e-08, 1, 0, -1, -3.577464e-08, 0, 8.906118, -7.2143593)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=852528660]
+[node name="PaperPlane" parent="." unique_id=1163163540 instance=ExtResource("2_dq0fv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.21093631)
-mesh = ExtResource("1_40h2x")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=749126216]
 transform = Transform3D(-1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, -1, 0, 0.50041205, -1.6567866)
+
+[node name="Player" parent="." unique_id=860884995 instance=ExtResource("3_dq0fv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36338028, 0.1521711, -0.39791897)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=734260534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1422234, 1.0121155, 3.438825)
+mesh = SubResource("BoxMesh_gxwvi")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=639730941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.714573, 1.0121155, 1.8882561)
+mesh = SubResource("BoxMesh_gxwvi")

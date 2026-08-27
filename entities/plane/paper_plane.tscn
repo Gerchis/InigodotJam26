@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://c6e2dukinf7d8"]
+
+[ext_resource type="ArrayMesh" uid="uid://djaa2i8v7ndd6" path="res://assets/gltf_files/paper_plane/paperPlane(0_0_1)_Plane.res" id="1_glhvj"]
+[ext_resource type="Script" uid="uid://ccny5mru3vpfx" path="res://entities/plane/plane_controller.gd" id="2_28g18"]
+
+[sub_resource type="Curve" id="Curve_28g18"]
+_limits = [-1.0, 1.0, -1.0, 1.0]
+_data = [Vector2(-1, -1), 0.0, 0.0, 0, 0, Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_jl0ao"]
+_limits = [-1.0, 1.0, -1.0, 1.0]
+_data = [Vector2(-1, -1), 0.0, 0.0, 0, 0, Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dq0fv"]
+data = PackedVector3Array(0.028299998, 0.22899999, 0.92859995, -0.95809996, 0.1604, -1.0713999, -0.95809996, 0.22899999, -1.0713999, 0.028299998, 0.22899999, 0.92859995, 0.028299998, 0.1604, 0.92859995, -0.95809996, 0.1604, -1.0713999, -0.95809996, 0.22899999, -1.0713999, 1.0148, 0.1604, -1.0713999, 1.0148, 0.22899999, -1.0713999, -0.95809996, 0.22899999, -1.0713999, -0.95809996, 0.1604, -1.0713999, 1.0148, 0.1604, -1.0713999, 1.0148, 0.22899999, -1.0713999, 0.028299998, 0.1604, 0.92859995, 0.028299998, 0.22899999, 0.92859995, 1.0148, 0.22899999, -1.0713999, 1.0148, 0.1604, -1.0713999, 0.028299998, 0.1604, 0.92859995, -0.95809996, 0.1604, -1.0713999, 0.028299998, 0.1604, 0.92859995, 1.0148, 0.1604, -1.0713999, -0.95809996, 0.22899999, -1.0713999, 1.0148, 0.22899999, -1.0713999, 0.028299998, 0.22899999, 0.92859995)
+
+[node name="PaperPlane" type="Node3D" unique_id=1016131883]
+script = ExtResource("2_28g18")
+horizontal_rotation_curve = SubResource("Curve_28g18")
+vertical_rotation_curve = SubResource("Curve_jl0ao")
+
+[node name="Body" type="AnimatableBody3D" parent="." unique_id=566896975 groups=["paper_plane"]]
+unique_name_in_owner = true
+collision_layer = 3
+
+[node name="Col" type="CollisionShape3D" parent="Body" unique_id=1481651853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.029284716, -0.23086087, 0.07321182)
+shape = SubResource("ConcavePolygonShape3D_dq0fv")
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1163163540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0024416447)
+layers = 3
+mesh = ExtResource("1_glhvj")
+
+[node name="MassCenter" type="Marker3D" parent="." unique_id=379665056]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.34339315)
