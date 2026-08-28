@@ -1,0 +1,202 @@
+[gd_scene format=3 uid="uid://ch8xj3yf3yvni"]
+
+[ext_resource type="FontFile" uid="uid://bman8aenmst8u" path="res://assets/font/kg_second_chances/KGSecondChancesSketch.ttf" id="1_7hlbp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pl81p"]
+line_spacing = -22.2
+paragraph_spacing = -3.99
+font = ExtResource("1_7hlbp")
+font_size = 54
+font_color = Color(0.8862745, 0.8666667, 0.92941177, 1)
+shadow_size = 11
+shadow_color = Color(0.11372549, 0.11372549, 0.11372549, 0.8862745)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lyd0k"]
+font = ExtResource("1_7hlbp")
+font_size = 196
+font_color = Color(0.8862745, 0.8666667, 0.92941177, 1)
+shadow_size = 11
+shadow_color = Color(0.00078602816, 0.0021645701, 0.0024861326, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5qgcx"]
+font = ExtResource("1_7hlbp")
+font_size = 92
+font_color = Color(0.8862745, 0.8666667, 0.92941177, 1)
+shadow_size = 11
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kxkac"]
+font = ExtResource("1_7hlbp")
+font_size = 60
+font_color = Color(0.8860375, 0.86665416, 0.9283668, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Menu" type="Control" unique_id=2104215880]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=747322596]
+layout_mode = 1
+offset_left = 306.0
+offset_top = 69.0
+offset_right = 526.0
+offset_bottom = 226.0
+rotation = 0.068004504
+text = "Paper
+"
+label_settings = SubResource("LabelSettings_pl81p")
+
+[node name="Label2" type="Label" parent="." unique_id=257735074]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 30.000004
+offset_right = 161.0
+offset_bottom = 278.0
+rotation = 0.13335165
+text = "J"
+label_settings = SubResource("LabelSettings_lyd0k")
+
+[node name="Label3" type="Label" parent="." unique_id=718387194]
+layout_mode = 0
+offset_left = 147.97327
+offset_top = 105.0
+offset_right = 500.97327
+offset_bottom = 305.0
+rotation = 0.07181013
+text = "ourney"
+label_settings = SubResource("LabelSettings_5qgcx")
+
+[node name="Label4" type="Label" parent="." unique_id=511454933]
+layout_mode = 0
+offset_left = 485.00003
+offset_top = 168.00003
+offset_right = 539.0
+offset_bottom = 342.00006
+rotation = -0.60963744
+text = "-"
+label_settings = SubResource("LabelSettings_kxkac")
+
+[node name="Label5" type="Label" parent="." unique_id=1565149522]
+layout_mode = 0
+offset_left = 514.0
+offset_top = 151.00002
+offset_right = 568.0
+offset_bottom = 325.0
+rotation = -0.55689454
+text = "-"
+label_settings = SubResource("LabelSettings_kxkac")
+
+[node name="Label6" type="Label" parent="." unique_id=1493287643]
+layout_mode = 0
+offset_left = 558.0
+offset_top = 130.0
+offset_right = 612.0
+offset_bottom = 304.00006
+rotation = -0.12725466
+text = "-"
+label_settings = SubResource("LabelSettings_kxkac")
+
+[node name="Label7" type="Label" parent="." unique_id=734766334]
+layout_mode = 0
+offset_left = 595.0
+offset_top = 125.99999
+offset_right = 649.0
+offset_bottom = 299.99997
+rotation = -0.9366044
+text = "-"
+label_settings = SubResource("LabelSettings_kxkac")
+
+[node name="Label8" type="Label" parent="." unique_id=813459379]
+layout_mode = 0
+offset_left = 687.99994
+offset_top = 124.99998
+offset_right = 741.99994
+offset_bottom = 298.99997
+rotation = 0.5207925
+text = "-"
+label_settings = SubResource("LabelSettings_kxkac")
+
+[node name="Label9" type="Label" parent="." unique_id=2037673018]
+layout_mode = 0
+offset_left = 578.0
+offset_top = 128.00002
+offset_right = 632.0
+offset_bottom = 302.00006
+rotation = -0.42225376
+text = "-"
+label_settings = SubResource("LabelSettings_kxkac")
+
+[node name="Label10" type="Label" parent="." unique_id=663246967]
+layout_mode = 0
+offset_left = 609.99994
+offset_top = 104.999985
+offset_right = 663.99994
+offset_bottom = 278.99994
+rotation = -1.1199105
+text = "-"
+label_settings = SubResource("LabelSettings_kxkac")
+
+[node name="Label11" type="Label" parent="." unique_id=1600420116]
+layout_mode = 0
+offset_left = 618.0
+offset_top = 107.0
+offset_right = 672.0
+offset_bottom = 280.99994
+rotation = -1.9827089
+text = "-"
+label_settings = SubResource("LabelSettings_kxkac")
+
+[node name="Label12" type="Label" parent="." unique_id=2143776453]
+layout_mode = 0
+offset_left = 628.99994
+offset_top = 99.99999
+offset_right = 682.99994
+offset_bottom = 273.99994
+rotation = -2.9515455
+text = "-"
+label_settings = SubResource("LabelSettings_kxkac")
+
+[node name="Label13" type="Label" parent="." unique_id=455488302]
+layout_mode = 0
+offset_left = 634.0
+offset_top = 80.999985
+offset_right = 688.0
+offset_bottom = 254.99992
+rotation = -4.1813006
+text = "-"
+label_settings = SubResource("LabelSettings_kxkac")
+
+[node name="Label14" type="Label" parent="." unique_id=1670982660]
+layout_mode = 0
+offset_left = 611.0
+offset_top = 67.0
+offset_right = 665.0
+offset_bottom = 240.99994
+rotation = -5.475217
+text = "-"
+label_settings = SubResource("LabelSettings_kxkac")
+
+[node name="Label15" type="Label" parent="." unique_id=1490601319]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 83.999985
+offset_right = 678.0
+offset_bottom = 258.0
+rotation = 0.5207925
+text = "-"
+label_settings = SubResource("LabelSettings_kxkac")
+
+[node name="Label16" type="Label" parent="." unique_id=512328482]
+layout_mode = 0
+offset_left = 660.99994
+offset_top = 108.999985
+offset_right = 714.99994
+offset_bottom = 283.0
+rotation = 0.5207925
+text = "-"
+label_settings = SubResource("LabelSettings_kxkac")

@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://cfws48tibs5ht"]
 
-[ext_resource type="PackedScene" uid="uid://cxj2h6tlhkml4" path="res://maps/test_map/test_map.tscn" id="1_s7pv5"]
+[ext_resource type="PackedScene" uid="uid://cbvfkykjbkaje" path="res://maps/game_map/game_map.tscn" id="1_0d6ao"]
 [ext_resource type="PackedScene" uid="uid://b1wixdbauld73" path="res://maps/ui/ui.tscn" id="2_0d6ao"]
+[ext_resource type="PackedScene" uid="uid://ch8xj3yf3yvni" path="res://maps/menu/menu.tscn" id="3_mbdyd"]
 
 [node name="GameView" type="Control" unique_id=59536798]
 layout_mode = 3
@@ -26,7 +27,10 @@ handle_input_locally = false
 size = Vector2i(512, 300)
 render_target_update_mode = 4
 
-[node name="TestMap" parent="SubViewportContainer/SubViewport" unique_id=1489690230 instance=ExtResource("1_s7pv5")]
+[node name="GameMap" parent="SubViewportContainer/SubViewport" unique_id=1080966284 instance=ExtResource("1_0d6ao")]
 
 [node name="UI" parent="." unique_id=1532511628 instance=ExtResource("2_0d6ao")]
+layout_mode = 1
+
+[node name="Menu" parent="." unique_id=2104215880 instance=ExtResource("3_mbdyd")]
 layout_mode = 1

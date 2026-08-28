@@ -8,12 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://bv5tfpcwpmod0" path="res://entities/buildings/building_4.tscn" id="6_vrrsu"]
 [ext_resource type="PackedScene" uid="uid://bx02448onab6x" path="res://entities/buildings/building_5.tscn" id="7_gel2u"]
 [ext_resource type="Script" uid="uid://b1lj0dmcnroux" path="res://entities/map_scroller/map_scroller.gd" id="8_7cpxw"]
+[ext_resource type="ArrayMesh" uid="uid://dxksucihiwpud" path="res://assets/gltf_files/cloud/cloud_001_Plane.res" id="9_tc2tb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i2q3s"]
 sky_top_color = Color(0.68235296, 0.8862745, 1, 1)
 sky_horizon_color = Color(0.42745098, 0.5019608, 0.98039216, 1)
-ground_bottom_color = Color(0.49019608, 0.1764706, 0.627451, 1)
-ground_horizon_color = Color(0.5176471, 0.39607844, 0.9254902, 1)
+ground_bottom_color = Color(0.46760982, 0.6857685, 0.9427556, 1)
+ground_horizon_color = Color(0.5538179, 0.72215736, 0.89495665, 1)
 
 [sub_resource type="Sky" id="Sky_5xtbe"]
 sky_material = SubResource("ProceduralSkyMaterial_i2q3s")
@@ -49,10 +50,10 @@ point_count = 3
 colors = PackedColorArray(0.42745098, 0.5019608, 0.98039216, 1, 0.68235296, 0.8862745, 1, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_bpkij"]
-size = Vector2(500, 500)
+size = Vector2(500, 961.75)
 
 [sub_resource type="Animation" id="Animation_ahoxu"]
-length = 0.001
+length = 2.7333333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -60,10 +61,10 @@ tracks/0/path = NodePath("ParalelScroll/PaperPlane:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Vector3(-0.03264284, -0.064721584, 0.39374775)]
+"values": []
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -72,10 +73,10 @@ tracks/1/path = NodePath("ParalelScroll/PaperPlane:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Vector3(0, 0, 0)]
+"values": []
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -84,10 +85,10 @@ tracks/2/path = NodePath("ParalelScroll/PaperPlane:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
 "update": 0,
-"values": [Vector3(1, 1, 1)]
+"values": []
 }
 
 [sub_resource type="Animation" id="Animation_cw3jw"]
@@ -100,10 +101,10 @@ tracks/0/path = NodePath("ParalelScroll/PaperPlane:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0009999999, 1),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0.23531246, 0.07250905, -0.6457818), Vector3(-0.03264284, -0.064721584, 0.39374775)]
+"values": [Vector3(-0.03264284, -0.064721584, 0.39374775), Vector3(-0.03264284, -0.064721584, 0.39374775)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -112,10 +113,10 @@ tracks/1/path = NodePath("ParalelScroll/PaperPlane:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.0009999999, 1),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0.18688112), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0.23261966), Vector3(0, 0, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -124,10 +125,10 @@ tracks/2/path = NodePath("ParalelScroll/PaperPlane:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.0009999999, 1),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(1.492052, 1.3603622, 1.5600218), Vector3(1, 1, 1)]
+"values": [Vector3(1, 1, 1), Vector3(1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n5cf4"]
@@ -167,7 +168,7 @@ scale_amount_curve = SubResource("Curve_04me6")
 color_initial_ramp = SubResource("Gradient_3abiu")
 
 [node name="PaperPlane" parent="ParalelScroll" unique_id=1016131883 instance=ExtResource("2_tc2tb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03264284, -0.064721584, 0.39374775)
+transform = Transform3D(0.97306585, -0.23052742, 0, 0.23052742, 0.97306585, 0, 0, 0, 1, -0.03264284, -0.064721584, 0.39374775)
 
 [node name="Camera3D" type="Camera3D" parent="ParalelScroll" unique_id=2077820677]
 transform = Transform3D(-1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, -1, 0, 0.50041205, -1.6567866)
@@ -176,7 +177,7 @@ visible = false
 [node name="MapLimit" type="Node3D" parent="ParalelScroll" unique_id=1979273227]
 
 [node name="Floor" type="MeshInstance3D" parent="ParalelScroll/MapLimit" unique_id=2113483708]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -84.92966, 185.49124)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -84.92966, 7.8788147)
 mesh = SubResource("PlaneMesh_bpkij")
 
 [node name="Building7" parent="ParalelScroll/MapLimit" unique_id=120542104 instance=ExtResource("3_bgx8x")]
@@ -491,12 +492,8 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -66.
 [node name="Building61" parent="ParalelScroll/MapLimit" unique_id=1754215641 instance=ExtResource("7_gel2u")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 113.038574, -48.80612, 342.75473)
 
-[node name="MapScroller" type="Node" parent="." unique_id=36334128 node_paths=PackedStringArray("paralel_scroll", "perpendicular_scroll", "plane", "particle_system")]
+[node name="MapScroller" type="Node" parent="." unique_id=36334128]
 script = ExtResource("8_7cpxw")
-paralel_scroll = NodePath("")
-perpendicular_scroll = NodePath("")
-plane = NodePath("")
-particle_system = NodePath("")
 metadata/_custom_type_script = "uid://b1lj0dmcnroux"
 
 [node name="PerpendicularScroll" type="Node3D" parent="." unique_id=1374589077]
@@ -506,10 +503,101 @@ unique_name_in_owner = true
 
 [node name="Camera3D" type="Camera3D" parent="Intro" unique_id=1072100772]
 transform = Transform3D(0.9731982, 0.081309974, -0.21511386, 0, 0.93540776, 0.3535708, 0.22996801, -0.34409446, 0.91033715, -1.9671715, 0.5992451, 2.8961277)
+current = true
 fov = 50.0
 
 [node name="Building4" parent="Intro" unique_id=1617035682 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(0.1899179, 0.108463906, -0.80789745, -0.16385567, 0.8176832, 0.071259044, 0.7985078, 0.14199328, 0.2067737, -21.540436, -143.50911, -38.719273)
+transform = Transform3D(0.1899179, 0.108463906, -0.80789745, -0.16385567, 0.8176832, 0.071259044, 0.7985078, 0.14199328, 0.2067737, -21.540436, -144.88074, -38.719273)
+
+[node name="Building1" parent="Intro" unique_id=2075893866 instance=ExtResource("3_bgx8x")]
+transform = Transform3D(2.195203, 0, 0, 0, 2.195203, 0, 0, 0, 2.195203, 68.367096, -369.84573, -162.07565)
+
+[node name="Building12" parent="Intro" unique_id=1938317852 instance=ExtResource("3_bgx8x")]
+transform = Transform3D(2.195203, 0, 0, 0, 2.195203, 0, 0, 0, 2.195203, 48.245926, -268.29633, -317.57507)
+
+[node name="Building5" parent="Intro" unique_id=1573431296 instance=ExtResource("3_bgx8x")]
+transform = Transform3D(2.195203, 0, 0, 0, 2.195203, 0, 0, 0, 2.195203, -32.174713, -421.1378, -240.41245)
+
+[node name="Building2" parent="Intro" unique_id=705983668 instance=ExtResource("4_67kxf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.97684, -212.39272, -93.33842)
+
+[node name="Building15" parent="Intro" unique_id=241280322 instance=ExtResource("4_67kxf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.94557, -227.3888, -43.821907)
+
+[node name="Building3" parent="Intro" unique_id=1770947927 instance=ExtResource("4_67kxf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.18315, -165.38672, -93.33842)
+
+[node name="Building13" parent="Intro" unique_id=174231323 instance=ExtResource("4_67kxf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.093857, -113.527405, -301.93594)
+
+[node name="Building6" parent="Intro" unique_id=2112000215 instance=ExtResource("7_gel2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 118.0482, -163.74213, -142.77347)
+
+[node name="Building11" parent="Intro" unique_id=1949083505 instance=ExtResource("7_gel2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.204758, -198.5352, -59.268112)
+
+[node name="Building7" parent="Intro" unique_id=1907857526 instance=ExtResource("5_owto4")]
+transform = Transform3D(1.803328, 0, 0, 0, 1.803328, 0, 0, 0, 1.803328, 160.95967, -331.46878, -273.39267)
+
+[node name="Building8" parent="Intro" unique_id=1932497343 instance=ExtResource("5_owto4")]
+transform = Transform3D(1.803328, 0, 0, 0, 1.803328, 0, 0, 0, 1.803328, -1.2339935, -333.78653, -99.571655)
+
+[node name="Building9" parent="Intro" unique_id=1226913905 instance=ExtResource("6_vrrsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.417145, -171.42136, -61.62706)
+
+[node name="Building10" parent="Intro" unique_id=1788389334 instance=ExtResource("6_vrrsu")]
+transform = Transform3D(3.5911443, 0, 0, 0, 3.5911443, 0, 0, 0, 3.5911443, 71.98675, -598.5118, -223.95248)
+
+[node name="Building14" parent="Intro" unique_id=913676196 instance=ExtResource("6_vrrsu")]
+transform = Transform3D(3.5911443, 0, 0, 0, 3.5911443, 0, 0, 0, 3.5911443, -53.669655, -483.29712, -354.48798)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Intro" unique_id=1405062927]
+transform = Transform3D(-0.18329498, 0.98420835, -8.427516, -6.4443507, -0.3379693, 0.19671296, -0.25727183, 7.7644773, 1.0768161, -4.5029383, -1.0654817, -21.522276)
+mesh = ExtResource("9_tc2tb")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Intro" unique_id=1369430796]
+transform = Transform3D(-0.016590282, -2.331479, -5.5841293, -4.932813, -0.24456067, 0.14180753, -0.24122666, 5.161312, -2.5157557, 23.581326, -24.734503, -21.92778)
+mesh = ExtResource("9_tc2tb")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Intro" unique_id=1403810270]
+transform = Transform3D(-0.016590282, -2.331479, -5.5841293, -4.932813, -0.24456067, 0.14180753, -0.24122666, 5.161312, -2.5157557, 66.540215, -37.4595, -52.529785)
+mesh = ExtResource("9_tc2tb")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Intro" unique_id=706894039]
+transform = Transform3D(-0.0065914975, -0.9263217, -2.2186346, -1.9598596, -0.09716658, 0.05634165, -0.095841944, 2.0506446, -0.99953675, 12.202705, -11.819418, -21.92778)
+mesh = ExtResource("9_tc2tb")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Intro" unique_id=353205539]
+transform = Transform3D(-0.014478263, -2.034671, -4.8732443, -4.3048434, -0.21342698, 0.12375478, -0.2105174, 4.5042534, -2.1954885, 22.325909, -0.2957363, -65.37071)
+mesh = ExtResource("9_tc2tb")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Intro" unique_id=44150756]
+transform = Transform3D(-0.018653821, -2.621474, -6.278697, -5.546368, -0.2749797, 0.15944588, -0.27123103, 5.8032885, -2.8286715, 66.27065, 3.121647, -65.37071)
+mesh = ExtResource("9_tc2tb")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Intro" unique_id=429798774]
+transform = Transform3D(-0.018653821, -2.621474, -6.278697, -5.546368, -0.2749797, 0.15944588, -0.27123103, 5.8032885, -2.8286715, 72.154175, -31.263252, -102.51305)
+mesh = ExtResource("9_tc2tb")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Intro" unique_id=1344832649]
+transform = Transform3D(-0.018653821, -2.621474, -6.278697, -5.546368, -0.2749797, 0.15944588, -0.27123103, 5.8032885, -2.8286715, 30.66771, 6.8576355, -193.78961)
+mesh = ExtResource("9_tc2tb")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Intro" unique_id=1526318387]
+transform = Transform3D(-0.038602572, -5.4249277, -12.993255, -11.477759, -0.5690482, 0.32996032, -0.5612906, 12.009435, -5.8537064, 120.27219, 6.9252243, -193.78961)
+mesh = ExtResource("9_tc2tb")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Intro" unique_id=1112461619]
+transform = Transform3D(-0.021595282, -3.0348456, -7.2687645, -6.420957, -0.3183404, 0.18458839, -0.31400058, 6.71839, -3.2747157, -48.963528, 11.400562, -193.78961)
+mesh = ExtResource("9_tc2tb")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Intro" unique_id=356800859]
+transform = Transform3D(-0.034935065, -4.909523, -11.758807, -10.387295, -0.5149848, 0.29861185, -0.5079642, 10.868458, -5.2975645, 36.48951, -47.25862, -138.56607)
+mesh = ExtResource("9_tc2tb")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Intro" unique_id=754943623]
+transform = Transform3D(-0.037242107, 0.1890447, -1.6126269, -1.3093711, -0.06491645, 0.037641536, -0.052272804, 1.4913849, 0.20605156, -5.889745, -5.267175, -3.7009506)
+mesh = ExtResource("9_tc2tb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1201130782]
 libraries/ = SubResource("AnimationLibrary_n5cf4")
