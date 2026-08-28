@@ -15,6 +15,10 @@ run/main_scene="uid://cfws48tibs5ht"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+UiSignals="*uid://143x5qnqrdhy"
+
 [display]
 
 window/size/viewport_width=1024
@@ -24,6 +28,7 @@ window/stretch/mode="canvas_items"
 [file_customization]
 
 folder_colors={
+"res://Managers/": "gray",
 "res://assets/": "red",
 "res://entities/": "blue",
 "res://maps/": "green"
@@ -62,6 +67,7 @@ move_left={
 
 [physics]
 
+common/physics_ticks_per_second=240
 3d/physics_engine="Jolt Physics"
 
 [rendering]

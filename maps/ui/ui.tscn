@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://b1wixdbauld73"]
+
+[ext_resource type="Script" uid="uid://c5ypb3w4ecjxc" path="res://maps/ui/ui_controller.gd" id="1_dt4kj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0d6ao"]
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="UI" type="Control" unique_id=1532511628]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dt4kj")
+
+[node name="Distance" type="Label" parent="." unique_id=133193859]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_0d6ao")
+
+[node name="Height" type="Label" parent="." unique_id=1774967890]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 40.0
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_0d6ao")
+
+[node name="Velocity" type="Label" parent="." unique_id=2055228012]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_0d6ao")

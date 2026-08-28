@@ -20,9 +20,11 @@ const BUILDING_5 = preload("uid://bx02448onab6x")
 @export var building_spawner_try_time: float = 2.0
 @export var building_spawner_close_chance: float = 20.0
 
-@export var max_horizontal_speed: float = 10.0
+@export var initial_horizontal_speed: float = 10.0
+@export var initial_vertical_speed: float = 10.0
+@export var speed_modification_ratio: float = 0.2
 
-@export var particle_system_offset: float = -10.0
+@export var bottom_point: float = -50.0
 
 var building_spawner_cooldown_timer: float = 0.0
 var building_spawner_timer: float = 0.0
@@ -33,25 +35,32 @@ var posible_buildings: Array[PackedScene] = [
 	BUILDING_4,
 	BUILDING_5,
 ]
-
-func _ready() -> void:
-	pass
+var current_speed: float = 0.0
+var current_distance: float = 0.0
+var current_height: float = 0.0
 
 func _process(delta: float) -> void:
 	process_scroll_elements(delta)
 	
 	process_building_spawn(delta)
+	
+	update_ui_values()
 
 func process_scroll_elements(delta) -> void:
 	var plane_roll: float = plane.weight_vector.x
-	var horizontal_speed: float = -plane_roll * max_horizontal_speed
+	var plane_pitch: float = plane.weight_vector.y
+	var horizontal_speed: float = -plane_roll * initial_horizontal_speed
+	current_speed = initial_vertical_speed - (initial_vertical_speed * speed_modification_ratio * plane_pitch)
 	
-	var new_offset: Vector2 = Vector2(horizontal_speed * delta, -10 * delta)
+	var new_offset: Vector2 = Vector2(horizontal_speed * delta, -current_speed * delta)
 	
 	paralel_scroll.global_position.x += new_offset.x
 	
 	for perpendicular_element in perpendicular_scroll.get_children() as Array[Node3D]:
 		perpendicular_element.global_position.z += new_offset.y
+	
+	current_distance += abs(new_offset.y)
+	current_height = plane.global_position.y - bottom_point
 
 func process_building_spawn(delta: float) -> void: 
 	building_spawner_timer += delta
@@ -73,3 +82,8 @@ func spawn_building(in_range: bool = true) -> void:
 	
 	perpendicular_scroll.add_child(buiding_instance)
 	buiding_instance.global_position = Vector3(x_pos, building_spawner_y, building_spawner_z)
+
+func update_ui_values() -> void:
+	UiSignals.update_distance.emit(current_distance)
+	UiSignals.update_height.emit(current_height)
+	UiSignals.update_velocity.emit(current_speed)

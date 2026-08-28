@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cxj2h6tlhkml4"]
 
 [ext_resource type="PackedScene" uid="uid://c6e2dukinf7d8" path="res://entities/plane/paper_plane.tscn" id="2_dq0fv"]
-[ext_resource type="Script" uid="uid://dc22r1tu0bkpa" path="res://entities/camera_system/camera_controller.gd" id="2_ydxtj"]
 [ext_resource type="PackedScene" uid="uid://d3vany3uxpjkl" path="res://entities/player/player.tscn" id="3_dq0fv"]
 [ext_resource type="PackedScene" uid="uid://c1wbr78i7pnj3" path="res://entities/buildings/building_1.tscn" id="4_wmrws"]
 [ext_resource type="PackedScene" uid="uid://8qpxbmbxv8np" path="res://entities/buildings/building_2.tscn" id="5_w0mp8"]
@@ -59,7 +58,6 @@ environment = SubResource("Environment_dq0fv")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1537562499]
 transform = Transform3D(1, 0, 0, 0, -3.577464e-08, 1, 0, -1, -3.577464e-08, 0, 8.906118, -7.2143593)
-light_energy = 0.7
 
 [node name="ParalelScroll" type="Node3D" parent="." unique_id=220037034]
 unique_name_in_owner = true
@@ -84,10 +82,8 @@ color_initial_ramp = SubResource("Gradient_ydxtj")
 [node name="PaperPlane" parent="ParalelScroll" unique_id=1163163540 instance=ExtResource("2_dq0fv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03264284, -0.064721584, 0.39374775)
 
-[node name="Camera3D" type="Camera3D" parent="ParalelScroll" unique_id=749126216 node_paths=PackedStringArray("plane")]
+[node name="Camera3D" type="Camera3D" parent="ParalelScroll" unique_id=749126216]
 transform = Transform3D(-1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, -1, 0, 0.50041205, -1.6567866)
-script = ExtResource("2_ydxtj")
-plane = NodePath("../PaperPlane")
 
 [node name="MapLimit" type="Node3D" parent="ParalelScroll" unique_id=2092475267]
 

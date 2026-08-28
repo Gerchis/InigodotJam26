@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://c6e2dukinf7d8"]
 
-[ext_resource type="ArrayMesh" uid="uid://djaa2i8v7ndd6" path="res://assets/gltf_files/paper_plane/paperPlane(0_0_1)_Plane.res" id="1_glhvj"]
 [ext_resource type="Script" uid="uid://ccny5mru3vpfx" path="res://entities/plane/plane_controller.gd" id="2_28g18"]
+[ext_resource type="ArrayMesh" uid="uid://c8v1wif58qprg" path="res://assets/gltf_files/paper_plane/paperPlane(0_1_0)_Plane.res" id="2_jl0ao"]
 
 [sub_resource type="Curve" id="Curve_28g18"]
 _limits = [-1.0, 1.0, -1.0, 1.0]
-_data = [Vector2(-1, -1), 0.0, 0.0, 0, 0, Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+_data = [Vector2(-1, -1), 0.0, 0.0, 0, 0, Vector2(0, 0), 1.153198, 1.153198, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="Curve" id="Curve_jl0ao"]
 _limits = [-1.0, 1.0, -1.0, 1.0]
-_data = [Vector2(-1, -1), 0.0, 0.0, 0, 0, Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+_data = [Vector2(-1, -1), 0.0, 0.0, 0, 0, Vector2(0, 0), 1.4768564, 1.4768564, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dq0fv"]
@@ -21,7 +21,7 @@ script = ExtResource("2_28g18")
 horizontal_rotation_curve = SubResource("Curve_28g18")
 vertical_rotation_curve = SubResource("Curve_jl0ao")
 
-[node name="Body" type="AnimatableBody3D" parent="." unique_id=973142529 groups=["paper_plane"]]
+[node name="Body" type="StaticBody3D" parent="." unique_id=1086050310 groups=["paper_plane"]]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0024416447)
 collision_layer = 3
@@ -32,16 +32,9 @@ shape = SubResource("ConcavePolygonShape3D_dq0fv")
 
 [node name="Mesh" type="MeshInstance3D" parent="." unique_id=1163163540]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0024416447)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0670774)
 layers = 3
-mesh = ExtResource("1_glhvj")
-
-[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Mesh" unique_id=976867768]
-visible = false
-remote_path = NodePath("../../Body")
-update_position = false
-update_rotation = false
-update_scale = false
+mesh = ExtResource("2_jl0ao")
 
 [node name="MassCenter" type="Marker3D" parent="." unique_id=379665056]
 unique_name_in_owner = true

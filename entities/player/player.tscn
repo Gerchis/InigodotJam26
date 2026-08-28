@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d3vany3uxpjkl"]
 
 [ext_resource type="Script" uid="uid://cxd42i3rodkl7" path="res://entities/player/player_controller.gd" id="1_abrql"]
-[ext_resource type="Texture2D" uid="uid://7moch7su68op" path="res://assets/spritesheet/spriteSheet_Pj_001.png" id="2_sglur"]
+[ext_resource type="Texture2D" uid="uid://dpfqtf5nui58n" path="res://assets/spritesheet/spriteSheet_Pj_004.png" id="2_sglur"]
 [ext_resource type="PackedScene" uid="uid://0v7w4od8b2ij" path="res://entities/weight_system/weight_system.tscn" id="3_sglur"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gxwvi"]
@@ -10,6 +10,7 @@ height = 0.2
 
 [sub_resource type="Animation" id="Animation_fkugw"]
 length = 0.001
+step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -22,10 +23,69 @@ tracks/0/keys = {
 "update": 0,
 "values": [0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_bectd"]
+resource_name = "bump"
+length = 0.50005
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [9]
+}
 
 [sub_resource type="Animation" id="Animation_qiwj3"]
 resource_name = "down_walk"
+loop_mode = 1
 step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_sglur"]
+resource_name = "forward_walk"
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [4, 5, 4]
+}
 
 [sub_resource type="Animation" id="Animation_8fjmc"]
 resource_name = "idle"
@@ -42,15 +102,125 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0, 1, 0]
+"values": [6, 7, 6]
+}
+
+[sub_resource type="Animation" id="Animation_bls4j"]
+resource_name = "left_walk"
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [2, 3, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+
+[sub_resource type="Animation" id="Animation_26q78"]
+resource_name = "right_walk"
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [2, 3, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qiwj3"]
 _data = {
 &"RESET": SubResource("Animation_fkugw"),
+&"bump": SubResource("Animation_bectd"),
 &"down_walk": SubResource("Animation_qiwj3"),
-&"idle": SubResource("Animation_8fjmc")
+&"forward_walk": SubResource("Animation_sglur"),
+&"idle": SubResource("Animation_8fjmc"),
+&"left_walk": SubResource("Animation_bls4j"),
+&"right_walk": SubResource("Animation_26q78")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sglur"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bls4j"]
+animation = &"forward_walk"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fkugw"]
+animation = &"down_walk"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8fjmc"]
+animation = &"right_walk"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qiwj3"]
+animation = &"left_walk"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_bls4j"]
+blend_mode = 1
+blend_point_0/node = SubResource("AnimationNodeAnimation_bls4j")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_0/name = &"forward_walk"
+blend_point_1/node = SubResource("AnimationNodeAnimation_fkugw")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_1/name = &"down_walk"
+blend_point_2/node = SubResource("AnimationNodeAnimation_8fjmc")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_2/name = &"right_walk"
+blend_point_3/node = SubResource("AnimationNodeAnimation_qiwj3")
+blend_point_3/pos = Vector2(1, 0)
+blend_point_3/name = &"left_walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sglur"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bls4j"]
+advance_mode = 2
+advance_condition = &"is_walking"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fkugw"]
+advance_mode = 2
+advance_condition = &"is_idle"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_gxwvi"]
+states/idle/node = SubResource("AnimationNodeAnimation_sglur")
+states/idle/position = Vector2(349, 100)
+states/walk/node = SubResource("AnimationNodeBlendSpace2D_bls4j")
+states/walk/position = Vector2(567, 100)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_sglur"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_bls4j"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_fkugw")]
 
 [node name="Player" type="CharacterBody3D" unique_id=860884995]
 script = ExtResource("1_abrql")
@@ -61,16 +231,22 @@ shape = SubResource("CapsuleShape3D_gxwvi")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=407241467]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.09733975, 0)
+flip_h = true
 billboard = 2
 texture_filter = 0
 texture = ExtResource("2_sglur")
 hframes = 6
 vframes = 2
-region_enabled = true
-region_rect = Rect2(-29.369598, 0.6830139, 749, 372)
 
 [node name="weight_system" parent="." unique_id=1258181792 instance=ExtResource("3_sglur")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1411133445]
 libraries/ = SubResource("AnimationLibrary_qiwj3")
-autoplay = &"idle"
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1139557349]
+unique_name_in_owner = true
+tree_root = SubResource("AnimationNodeStateMachine_gxwvi")
+anim_player = NodePath("../AnimationPlayer")
+parameters/conditions/is_idle = false
+parameters/conditions/is_walking = false
+parameters/walk/blend_position = Vector2(0.2883582, -0.3109244)
