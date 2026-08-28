@@ -20,9 +20,12 @@ var time_counter: float = 0.0
 
 var pitch_offset: float = 0.0
 
+@export var in_boost: bool = false
+
 @onready var body: StaticBody3D = %Body
 @onready var mass_center: Marker3D = %MassCenter
 @onready var mesh: MeshInstance3D = %Mesh
+@onready var animation_player: AnimationPlayer = %AnimationPlayer
 
 func _process(delta: float) -> void:
 	process_weight_vector()
@@ -30,6 +33,7 @@ func _process(delta: float) -> void:
 	process_subtle_movement(delta)
 
 func _physics_process(delta: float) -> void:
+	if in_boost: return
 	body.global_rotation = mesh.global_rotation
 	body.global_position = mesh.global_position
 
@@ -59,3 +63,6 @@ func apply_rotation(delta: float) -> void:
 func process_subtle_movement(delta) -> void:
 	time_counter += delta * subtle_time_mod
 	pitch_offset = deg_to_rad(sin(time_counter) * subtle_rotation)
+
+func boost() -> void:
+	animation_player.play("boost")

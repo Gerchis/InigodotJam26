@@ -32,6 +32,8 @@ const BUILDING_5 = preload("uid://bx02448onab6x")
 @export var max_falling_rate: float = 1.0
 @export var min_falling_rate: float = 0.25
 
+@export var delete_threshold: float = 10.0
+
 var building_spawner_cooldown_timer: float = 0.0
 var building_spawner_timer: float = 0.0
 var posible_buildings: Array[PackedScene] = [
@@ -71,6 +73,9 @@ func process_scroll_elements(delta) -> void:
 	
 	for perpendicular_element in perpendicular_scroll.get_children() as Array[Node3D]:
 		perpendicular_element.global_position.z += new_offset.y
+		if perpendicular_element.global_position.z < -delete_threshold:
+			perpendicular_element.queue_free()
+			print("WWWW")
 	
 	current_distance += abs(new_offset.y)
 	current_height = plane.global_position.y - bottom_point

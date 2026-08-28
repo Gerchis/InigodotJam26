@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b4d0bj1ucwwfm" path="res://entities/buildings/building_3.tscn" id="7_ydxtj"]
 [ext_resource type="PackedScene" uid="uid://bv5tfpcwpmod0" path="res://entities/buildings/building_4.tscn" id="8_0uc2a"]
 [ext_resource type="PackedScene" uid="uid://bx02448onab6x" path="res://entities/buildings/building_5.tscn" id="9_v3t1g"]
+[ext_resource type="PackedScene" uid="uid://cn2d67illxdd7" path="res://entities/power_ring/power_ring.tscn" id="10_0uc2a"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xjfy0"]
 sky_top_color = Color(0.68235296, 0.8862745, 1, 1)
@@ -444,3 +445,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.601608, -75.63153, 173.910
 
 [node name="Building112" parent="PerpendicularScroll" unique_id=1761265836 instance=ExtResource("9_v3t1g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6977234, -48.80612, 236.64543)
+
+[node name="PowerRing" parent="PerpendicularScroll" unique_id=155020741 instance=ExtResource("10_0uc2a")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 10.557357, -5.673439, 65.14151)
