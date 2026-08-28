@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d3vany3uxpjkl"]
 
 [ext_resource type="Script" uid="uid://cxd42i3rodkl7" path="res://entities/player/player_controller.gd" id="1_abrql"]
-[ext_resource type="Texture2D" uid="uid://d1gm6tt0dig04" path="res://assets/spritesheet/Idle_001.png" id="2_bls4j"]
+[ext_resource type="Texture2D" uid="uid://7moch7su68op" path="res://assets/spritesheet/spriteSheet_Pj_001.png" id="2_sglur"]
 [ext_resource type="PackedScene" uid="uid://0v7w4od8b2ij" path="res://entities/weight_system/weight_system.tscn" id="3_sglur"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gxwvi"]
@@ -63,8 +63,11 @@ shape = SubResource("CapsuleShape3D_gxwvi")
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.09733975, 0)
 billboard = 2
 texture_filter = 0
-texture = ExtResource("2_bls4j")
-hframes = 2
+texture = ExtResource("2_sglur")
+hframes = 6
+vframes = 2
+region_enabled = true
+region_rect = Rect2(-29.369598, 0.6830139, 749, 372)
 
 [node name="weight_system" parent="." unique_id=1258181792 instance=ExtResource("3_sglur")]
 
