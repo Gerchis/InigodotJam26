@@ -17,7 +17,7 @@ func update_distance_label(new_value: float) -> void:
 	distance.text = str(floor(new_value)).pad_decimals(0) + "m"
 
 func update_height_label(new_value: float) -> void:
-	height.text = str(new_value) + "m"
+	height.text = str(floor(new_value)).pad_decimals(0) + "m"
 
 func update_velocity_label(new_value: float) -> void:
 	velocity.text = str(new_value).pad_decimals(2) + "m/s"

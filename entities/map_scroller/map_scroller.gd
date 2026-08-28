@@ -9,6 +9,7 @@ const BUILDING_5 = preload("uid://bx02448onab6x")
 
 @export var paralel_scroll: Node3D
 @export var perpendicular_scroll: Node3D
+@export var falling_scroll: Node3D
 @export var plane: PlaneController
 @export var particle_system: CPUParticles3D
 
@@ -22,9 +23,14 @@ const BUILDING_5 = preload("uid://bx02448onab6x")
 
 @export var initial_horizontal_speed: float = 10.0
 @export var initial_vertical_speed: float = 10.0
-@export var speed_modification_ratio: float = 0.2
+@export var max_speed_mod: float = 1.0
+@export var min_speed_mod: float = 0.2
+@export var max_acceleration: float = 1.0
 
 @export var bottom_point: float = -50.0
+
+@export var max_falling_rate: float = 1.0
+@export var min_falling_rate: float = 0.25
 
 var building_spawner_cooldown_timer: float = 0.0
 var building_spawner_timer: float = 0.0
@@ -35,7 +41,7 @@ var posible_buildings: Array[PackedScene] = [
 	BUILDING_4,
 	BUILDING_5,
 ]
-var current_speed: float = 0.0
+var current_speed: float = initial_vertical_speed
 var current_distance: float = 0.0
 var current_height: float = 0.0
 
@@ -49,9 +55,16 @@ func _process(delta: float) -> void:
 func process_scroll_elements(delta) -> void:
 	var plane_roll: float = plane.weight_vector.x
 	var plane_pitch: float = plane.weight_vector.y
-	var horizontal_speed: float = -plane_roll * initial_horizontal_speed
-	current_speed = initial_vertical_speed - (initial_vertical_speed * speed_modification_ratio * plane_pitch)
 	
+	var base_speed: float = initial_vertical_speed + (current_distance / 100.0)
+	var speed_offset: float = base_speed * max_speed_mod * -plane_pitch
+	if plane_pitch < 0.0:
+		speed_offset = base_speed * min_speed_mod * -plane_pitch
+	var target_speed: float = base_speed + speed_offset
+	
+	current_speed = move_toward(current_speed, target_speed, max_acceleration * delta)
+	
+	var horizontal_speed: float = -plane_roll * (current_speed)
 	var new_offset: Vector2 = Vector2(horizontal_speed * delta, -current_speed * delta)
 	
 	paralel_scroll.global_position.x += new_offset.x
@@ -61,6 +74,9 @@ func process_scroll_elements(delta) -> void:
 	
 	current_distance += abs(new_offset.y)
 	current_height = plane.global_position.y - bottom_point
+	
+	var falling_rate: float = remap(plane_pitch, -1.0, 1.0, min_falling_rate, max_falling_rate)
+	falling_scroll.global_position.y -= (falling_rate) * delta
 
 func process_building_spawn(delta: float) -> void: 
 	building_spawner_timer += delta
