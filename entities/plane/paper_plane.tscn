@@ -21,7 +21,7 @@ script = ExtResource("2_28g18")
 horizontal_rotation_curve = SubResource("Curve_28g18")
 vertical_rotation_curve = SubResource("Curve_jl0ao")
 
-[node name="Body" type="AnimatableBody3D" parent="." unique_id=566896975 groups=["paper_plane"]]
+[node name="Body" type="AnimatableBody3D" parent="." unique_id=973142529 groups=["paper_plane"]]
 unique_name_in_owner = true
 collision_layer = 3
 
@@ -37,3 +37,6 @@ mesh = ExtResource("1_glhvj")
 [node name="MassCenter" type="Marker3D" parent="." unique_id=379665056]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.34339315)
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="." unique_id=976867768]
+remote_path = NodePath("../Body")

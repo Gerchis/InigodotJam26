@@ -20,8 +20,9 @@ func _process(delta: float) -> void:
 	process_weight_vector()
 	apply_rotation(delta)
 
-func _physics_process(delta: float) -> void:
-	body.global_basis = global_basis
+#func _physics_process(delta: float) -> void:
+	#body.global_position = global_position
+	#body.global_basis = global_basis
 
 func process_weight_vector() -> void:
 	if weights.is_empty(): return
