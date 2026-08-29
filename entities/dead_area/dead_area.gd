@@ -11,3 +11,4 @@ func _ready() -> void:
 func on_body_entered(body: Node3D) -> void:
 	if body.get_owner() is PlaneController:
 		var plane: PlaneController = body.get_owner()
+		plane.die()

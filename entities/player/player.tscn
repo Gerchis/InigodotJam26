@@ -35,6 +35,30 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D:billboard")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite3D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_wvtmh"]
 resource_name = "bump_left"
@@ -126,6 +150,36 @@ tracks/2/keys = {
 "args": [],
 "method": &"continue_moving"
 }]
+}
+
+[sub_resource type="Animation" id="Animation_7thud"]
+resource_name = "death"
+length = 0.50005
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:billboard")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 6.2831855)]
 }
 
 [sub_resource type="Animation" id="Animation_qiwj3"]
@@ -243,6 +297,7 @@ _data = {
 &"RESET": SubResource("Animation_fkugw"),
 &"bump_left": SubResource("Animation_wvtmh"),
 &"bump_right": SubResource("Animation_bectd"),
+&"death": SubResource("Animation_7thud"),
 &"down_walk": SubResource("Animation_qiwj3"),
 &"forward_walk": SubResource("Animation_sglur"),
 &"idle": SubResource("Animation_8fjmc"),
@@ -264,6 +319,9 @@ blend_point_0/name = &"bump_left"
 blend_point_1/node = SubResource("AnimationNodeAnimation_bectd")
 blend_point_1/pos = 1.0
 blend_point_1/name = &"bump_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wvtmh"]
+animation = &"death"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sglur"]
 animation = &"idle"
@@ -318,14 +376,29 @@ advance_condition = &"is_attacking"
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_j3ovn"]
+advance_mode = 2
+advance_condition = &"is_dead"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_afbqv"]
+advance_mode = 2
+advance_condition = &"is_dead"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gx6sm"]
+advance_mode = 2
+advance_condition = &"is_dead"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_gxwvi"]
 states/bump/node = SubResource("AnimationNodeBlendSpace1D_7thud")
 states/bump/position = Vector2(446, 224)
+states/death/node = SubResource("AnimationNodeAnimation_wvtmh")
+states/death/position = Vector2(436, 332)
 states/idle/node = SubResource("AnimationNodeAnimation_sglur")
 states/idle/position = Vector2(349, 100)
 states/walk/node = SubResource("AnimationNodeBlendSpace2D_bls4j")
 states/walk/position = Vector2(567, 100)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_sglur"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_bls4j"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_fkugw"), "idle", "bump", SubResource("AnimationNodeStateMachineTransition_wvtmh"), "walk", "bump", SubResource("AnimationNodeStateMachineTransition_7thud"), "bump", "idle", SubResource("AnimationNodeStateMachineTransition_a1qjk")]
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_sglur"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_bls4j"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_fkugw"), "idle", "bump", SubResource("AnimationNodeStateMachineTransition_wvtmh"), "walk", "bump", SubResource("AnimationNodeStateMachineTransition_7thud"), "bump", "idle", SubResource("AnimationNodeStateMachineTransition_a1qjk"), "walk", "death", SubResource("AnimationNodeStateMachineTransition_j3ovn"), "bump", "death", SubResource("AnimationNodeStateMachineTransition_afbqv"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_gx6sm")]
+graph_offset = Vector2(-244, 76)
 
 [node name="Player" type="CharacterBody3D" unique_id=860884995]
 script = ExtResource("1_abrql")
@@ -354,6 +427,7 @@ root_node = NodePath("%AnimationTree/..")
 tree_root = SubResource("AnimationNodeStateMachine_gxwvi")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/is_attacking = false
+parameters/conditions/is_dead = false
 parameters/conditions/is_idle = false
 parameters/conditions/is_walking = false
 parameters/bump/blend_position = 0.10005653

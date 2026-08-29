@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cfws48tibs5ht"]
 
 [ext_resource type="PackedScene" uid="uid://cbvfkykjbkaje" path="res://maps/game_map/game_map.tscn" id="1_0d6ao"]
+[ext_resource type="Script" uid="uid://bu2ffxbek26hq" path="res://maps/game_view/game_view.gd" id="1_73dfm"]
 [ext_resource type="PackedScene" uid="uid://b1wixdbauld73" path="res://maps/ui/ui.tscn" id="2_0d6ao"]
 [ext_resource type="PackedScene" uid="uid://ch8xj3yf3yvni" path="res://maps/menu/menu.tscn" id="3_mbdyd"]
 
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_73dfm")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=836572573]
 layout_mode = 1
@@ -23,6 +25,7 @@ stretch = true
 stretch_shrink = 2
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1805635950]
+unique_name_in_owner = true
 handle_input_locally = false
 size = Vector2i(512, 300)
 render_target_update_mode = 4
@@ -33,4 +36,5 @@ render_target_update_mode = 4
 layout_mode = 1
 
 [node name="Menu" parent="." unique_id=2104215880 instance=ExtResource("3_mbdyd")]
+unique_name_in_owner = true
 layout_mode = 1
