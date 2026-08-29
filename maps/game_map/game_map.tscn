@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bv5tfpcwpmod0" path="res://entities/buildings/building_4.tscn" id="6_vrrsu"]
 [ext_resource type="PackedScene" uid="uid://bx02448onab6x" path="res://entities/buildings/building_5.tscn" id="7_gel2u"]
 [ext_resource type="Script" uid="uid://b1lj0dmcnroux" path="res://entities/map_scroller/map_scroller.gd" id="8_7cpxw"]
+[ext_resource type="PackedScene" uid="uid://cn2d67illxdd7" path="res://entities/power_ring/power_ring.tscn" id="9_bgx8x"]
 [ext_resource type="ArrayMesh" uid="uid://bda7u7onqwg1s" path="res://assets/gltf_files/cloud/cloud_001_Plane.res" id="9_tc2tb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i2q3s"]
@@ -93,7 +94,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Player:position")
+tracks/3/path = NodePath("ParalelScroll/FallingScroll/Player:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -105,7 +106,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Player:rotation")
+tracks/4/path = NodePath("ParalelScroll/FallingScroll/Player:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -117,7 +118,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Player:scale")
+tracks/5/path = NodePath("ParalelScroll/FallingScroll/Player:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -434,7 +435,7 @@ tracks/10/keys = {
 
 [sub_resource type="Animation" id="Animation_cw3jw"]
 resource_name = "transition"
-length = 1.2666667
+length = 1.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -474,23 +475,23 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Player:position")
+tracks/3/path = NodePath("ParalelScroll/FallingScroll/Player:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 1.01),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-0.4561783, -0.08041048, 0.4068396), Vector3(-0.0075627863, 0.1521711, -0.39791897)]
+"values": [Vector3(-0.4561783, -0.08041048, 0.4068396), Vector3(-0.2172972, -0.056259856, -0.11106181)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Player:rotation")
+tracks/4/path = NodePath("ParalelScroll/FallingScroll/Player:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 1.01),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
@@ -498,11 +499,11 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Player:scale")
+tracks/5/path = NodePath("ParalelScroll/FallingScroll/Player:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 1.01),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(1.4777448, 1.4777448, 1.4777448), Vector3(1, 1, 1)]
@@ -543,6 +544,20 @@ tracks/8/keys = {
 "update": 0,
 "values": [50.0, 75.0]
 }
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("MapScroller")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(1.0666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"game_ready"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n5cf4"]
 _data = {
@@ -558,9 +573,6 @@ environment = SubResource("Environment_dlcij")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=636852904]
 transform = Transform3D(1, 0, 0, 0, -3.577464e-08, 1, 0, -1, -3.577464e-08, 0, 8.906118, -7.2143593)
-
-[node name="Player" parent="." unique_id=860884995 instance=ExtResource("1_niuei")]
-transform = Transform3D(1.4777448, 0, 0, 0, 1.4777448, 0, 0, 0, 1.4777448, -0.4561783, -0.08041048, 0.4068396)
 
 [node name="ParalelScroll" type="Node3D" parent="." unique_id=1211200954]
 unique_name_in_owner = true
@@ -901,26 +913,57 @@ angle_max = 360.0
 scale_amount_curve = SubResource("Curve_04me6")
 color_initial_ramp = SubResource("Gradient_3abiu")
 
+[node name="Player" parent="ParalelScroll/FallingScroll" unique_id=860884995 instance=ExtResource("1_niuei")]
+transform = Transform3D(1.4777448, 0, 0, 0, 1.4777448, 0, 0, 0, 1.4777448, -0.4561783, -0.08041048, 0.4068396)
+
 [node name="PaperPlane" parent="ParalelScroll/FallingScroll" unique_id=1016131883 node_paths=PackedStringArray("player") instance=ExtResource("2_tc2tb")]
 transform = Transform3D(0.97306585, -0.23052742, 0, 0.23052742, 0.97306585, 0, 0, 0, 1, -0.03264284, -0.064721584, 0.39374775)
-player = NodePath("../../../Player")
+player = NodePath("../Player")
 
 [node name="Camera3D" type="Camera3D" parent="ParalelScroll/FallingScroll" unique_id=2077820677]
-transform = Transform3D(0.9731982, 0.08130997, -0.21511386, 0, 0.9354077, 0.3535708, 0.22996801, -0.34409443, 0.91033715, -1.9671715, 0.5992451, 2.8961277)
+transform = Transform3D(0.9731982, 0.08130997, -0.21511386, 0, 0.93540764, 0.3535708, 0.22996801, -0.34409443, 0.91033715, -1.9671715, 0.5992451, 2.8961277)
 current = true
 fov = 50.0
 
-[node name="MapScroller" type="Node" parent="." unique_id=36334128 node_paths=PackedStringArray("paralel_scroll", "perpendicular_scroll", "falling_scroll", "plane", "particle_system")]
+[node name="MapScroller" type="Node" parent="." unique_id=36334128 node_paths=PackedStringArray("paralel_scroll", "perpendicular_scroll", "falling_scroll", "plane", "particle_system", "animation_player")]
 script = ExtResource("8_7cpxw")
 paralel_scroll = NodePath("../ParalelScroll")
 perpendicular_scroll = NodePath("../PerpendicularScroll")
 falling_scroll = NodePath("../ParalelScroll/FallingScroll")
 plane = NodePath("../ParalelScroll/FallingScroll/PaperPlane")
 particle_system = NodePath("../ParalelScroll/FallingScroll/ParticleSystem")
+animation_player = NodePath("../AnimationPlayer")
 metadata/_custom_type_script = "uid://b1lj0dmcnroux"
 
 [node name="PerpendicularScroll" type="Node3D" parent="." unique_id=1374589077]
 unique_name_in_owner = true
+
+[node name="Building4" parent="PerpendicularScroll" unique_id=1136148902 instance=ExtResource("5_owto4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.81488, -53.800873, 145.24263)
+
+[node name="Building5" parent="PerpendicularScroll" unique_id=1776071547 instance=ExtResource("5_owto4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.318954, -53.800873, 289.5899)
+
+[node name="Building7" parent="PerpendicularScroll" unique_id=1220571130 instance=ExtResource("3_bgx8x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.854416, -75.61933, 79.85904)
+
+[node name="Building8" parent="PerpendicularScroll" unique_id=1215740536 instance=ExtResource("3_bgx8x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.441177, -75.61933, 248.29901)
+
+[node name="Building111" parent="PerpendicularScroll" unique_id=1994877250 instance=ExtResource("6_vrrsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.449245, -56.604504, 64.83106)
+
+[node name="Building113" parent="PerpendicularScroll" unique_id=893685321 instance=ExtResource("6_vrrsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.58261, -56.604504, 171.60724)
+
+[node name="Building29" parent="PerpendicularScroll" unique_id=451021648 instance=ExtResource("4_67kxf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.601608, -75.63153, 173.91075)
+
+[node name="Building112" parent="PerpendicularScroll" unique_id=1606642501 instance=ExtResource("7_gel2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6977234, -48.80612, 236.64543)
+
+[node name="PowerRing" parent="PerpendicularScroll" unique_id=155020741 instance=ExtResource("9_bgx8x")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 10.557357, -5.673439, 65.14151)
 
 [node name="Intro" type="Node3D" parent="." unique_id=706364387]
 

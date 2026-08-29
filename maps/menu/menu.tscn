@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ch8xj3yf3yvni"]
 
 [ext_resource type="FontFile" uid="uid://bman8aenmst8u" path="res://assets/font/kg_second_chances/KGSecondChancesSketch.ttf" id="1_7hlbp"]
+[ext_resource type="Script" uid="uid://c5ib124nqmvhk" path="res://maps/menu/menu.gd" id="1_10vvg"]
 [ext_resource type="FontFile" uid="uid://cs4polfbiabkx" path="res://assets/font/kg_second_chances/KGSecondChancesSolid.ttf" id="2_iv5qn"]
 [ext_resource type="Texture2D" uid="uid://c7x7e2kvywnia" path="res://assets/ui/GrabberSlider_001.png" id="3_b63vn"]
 
@@ -82,6 +83,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_10vvg")
 
 [node name="Label" type="Label" parent="." unique_id=747322596]
 layout_mode = 1
@@ -244,7 +246,8 @@ rotation = 0.5207925
 text = "-"
 label_settings = SubResource("LabelSettings_kxkac")
 
-[node name="Button" type="Button" parent="." unique_id=1942817382]
+[node name="PlayButton" type="Button" parent="." unique_id=1942817382]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 269.0
 offset_top = 329.0
@@ -285,3 +288,5 @@ offset_bottom = 456.0
 rotation = -0.17366052
 text = "Volume"
 label_settings = SubResource("LabelSettings_13r3h")
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

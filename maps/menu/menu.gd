@@ -1,0 +1,19 @@
+class_name Menu
+extends Control
+
+var all_disabled: bool = false
+
+func _ready() -> void:
+	UiSignals.start_game.connect(hide_menu)
+
+func hide_menu() -> void:
+	all_disabled = true
+	var tween: Tween = create_tween()
+	tween.tween_property(self, "modulate", Color.TRANSPARENT, 0.5)
+	await tween.finished
+	hide()
+	modulate = Color.WHITE
+
+
+func _on_play_button_pressed() -> void:
+	UiSignals.start_game.emit()

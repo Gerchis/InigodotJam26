@@ -12,6 +12,7 @@ const BUILDING_5 = preload("uid://bx02448onab6x")
 @export var falling_scroll: Node3D
 @export var plane: PlaneController
 @export var particle_system: CPUParticles3D
+@export var animation_player: AnimationPlayer
 
 @export var building_spawner_x_range: float = 50.0
 @export var building_spawner_outer_x_range: float = 180.0
@@ -46,6 +47,9 @@ var posible_buildings: Array[PackedScene] = [
 var current_speed: float = initial_vertical_speed
 var current_distance: float = 0.0
 var current_height: float = 0.0
+
+func _ready() -> void:
+	UiSignals.start_game.connect(transition_to_game)
 
 func _process(delta: float) -> void:
 	if GameManagers.in_menu: return
@@ -108,3 +112,9 @@ func update_ui_values() -> void:
 	UiSignals.update_distance.emit(current_distance)
 	UiSignals.update_height.emit(current_height)
 	UiSignals.update_velocity.emit(current_speed)
+
+func transition_to_game() -> void:
+	animation_player.play("transition")
+
+func game_ready() -> void:
+	GameManagers.in_menu = false
