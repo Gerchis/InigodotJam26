@@ -29,8 +29,9 @@ render_target_update_mode = 4
 
 [node name="GameMap" parent="SubViewportContainer/SubViewport" unique_id=1080966284 instance=ExtResource("1_0d6ao")]
 
-[node name="UI" parent="." unique_id=1532511628 instance=ExtResource("2_0d6ao")]
-layout_mode = 1
-
 [node name="Menu" parent="." unique_id=2104215880 instance=ExtResource("3_mbdyd")]
+layout_mode = 1
+script = null
+
+[node name="UI" parent="." unique_id=1532511628 instance=ExtResource("2_0d6ao")]
 layout_mode = 1
