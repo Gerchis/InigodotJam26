@@ -61,10 +61,10 @@ tracks/0/path = NodePath("ParalelScroll/FallingScroll/PaperPlane:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": []
+"values": [Vector3(-0.03264284, -0.064721584, 0.39374775)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -73,10 +73,10 @@ tracks/1/path = NodePath("ParalelScroll/FallingScroll/PaperPlane:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": []
+"values": [Vector3(0, 0, 0.23261966)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -85,10 +85,10 @@ tracks/2/path = NodePath("ParalelScroll/FallingScroll/PaperPlane:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": []
+"values": [Vector3(1, 1, 1)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -97,10 +97,10 @@ tracks/3/path = NodePath("Player:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": []
+"values": [Vector3(-0.4561783, -0.08041048, 0.4068396)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -109,10 +109,10 @@ tracks/4/path = NodePath("Player:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": []
+"values": [Vector3(0, 0, 0)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -121,10 +121,46 @@ tracks/5/path = NodePath("Player:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": []
+"values": [Vector3(1.4777448, 1.4777448, 1.4777448)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ParalelScroll/FallingScroll/Camera3D:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.9671715, 0.5992451, 2.8961277)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ParalelScroll/FallingScroll/Camera3D:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.36138573, -0.23204482, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ParalelScroll/FallingScroll/Camera3D:fov")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [50.0]
 }
 
 [sub_resource type="Animation" id="Animation_tc2tb"]
@@ -132,7 +168,7 @@ resource_name = "menu"
 
 [sub_resource type="Animation" id="Animation_cw3jw"]
 resource_name = "transition"
-length = 1.3333334
+length = 1.2666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -205,6 +241,42 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector3(1.4777448, 1.4777448, 1.4777448), Vector3(1, 1, 1)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ParalelScroll/FallingScroll/Camera3D:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.56666666, 0.6666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1.2311445, 22.62735),
+"update": 0,
+"values": [Vector3(-1.9671715, 0.5992451, 2.8961277), Vector3(-1.4425924, 0.57288957, 1.6820172), Vector3(-0.60108006, 0.53061104, -0.26561832), Vector3(-0.36064804, 0.51853144, -0.82208586), Vector3(0, 0.50041205, -1.6567866)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ParalelScroll/FallingScroll/Camera3D:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.56666666, 0.6666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1.319508, 38.05464),
+"update": 0,
+"values": [Vector3(-0.36138573, -0.23204482, 0), Vector3(-0.2650162, -1.0079243, 0), Vector3(-0.13250807, -2.0747588, 0), Vector3(-0.07950482, -2.5014925, 0), Vector3(0, -3.1415927, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ParalelScroll/FallingScroll/Camera3D:fov")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [50.0, 75.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n5cf4"]
 _data = {
@@ -222,7 +294,7 @@ environment = SubResource("Environment_dlcij")
 transform = Transform3D(1, 0, 0, 0, -3.577464e-08, 1, 0, -1, -3.577464e-08, 0, 8.906118, -7.2143593)
 
 [node name="Player" parent="." unique_id=860884995 instance=ExtResource("1_niuei")]
-transform = Transform3D(1.4777448, 0, 0, 0, 1.4777448, 0, 0, 0, 1.4777448, -0.4092607, -0.08041051, 0.1710937)
+transform = Transform3D(1.4777448, 0, 0, 0, 1.4777448, 0, 0, 0, 1.4777448, -0.4561783, -0.08041048, 0.4068396)
 
 [node name="ParalelScroll" type="Node3D" parent="." unique_id=1211200954]
 unique_name_in_owner = true
@@ -568,8 +640,9 @@ transform = Transform3D(0.97306585, -0.23052742, 0, 0.23052742, 0.97306585, 0, 0
 player = NodePath("../../../Player")
 
 [node name="Camera3D" type="Camera3D" parent="ParalelScroll/FallingScroll" unique_id=2077820677]
-transform = Transform3D(-1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, -1, 0, 0.50041205, -1.6567866)
-visible = false
+transform = Transform3D(0.9731982, 0.081309974, -0.21511386, 0, 0.93540776, 0.3535708, 0.22996801, -0.34409446, 0.91033715, -1.9671715, 0.5992451, 2.8961277)
+current = true
+fov = 50.0
 
 [node name="MapScroller" type="Node" parent="." unique_id=36334128 node_paths=PackedStringArray("paralel_scroll", "perpendicular_scroll", "falling_scroll", "plane", "particle_system")]
 script = ExtResource("8_7cpxw")
@@ -587,7 +660,7 @@ unique_name_in_owner = true
 
 [node name="Camera3D" type="Camera3D" parent="Intro" unique_id=1072100772]
 transform = Transform3D(0.9731982, 0.081309974, -0.21511386, 0, 0.93540776, 0.3535708, 0.22996801, -0.34409446, 0.91033715, -1.9671715, 0.5992451, 2.8961277)
-current = true
+visible = false
 fov = 50.0
 
 [node name="Building4" parent="Intro" unique_id=1617035682 instance=ExtResource("6_vrrsu")]

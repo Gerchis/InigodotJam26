@@ -246,10 +246,10 @@ label_settings = SubResource("LabelSettings_kxkac")
 
 [node name="Button" type="Button" parent="." unique_id=1942817382]
 layout_mode = 0
-offset_left = 268.00003
-offset_top = 325.00003
-offset_right = 403.00003
-offset_bottom = 404.00003
+offset_left = 269.0
+offset_top = 329.0
+offset_right = 404.0
+offset_bottom = 408.0
 rotation = -0.14222077
 theme_override_colors/font_color = Color(0.14509805, 0.101960786, 0.25882354, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
