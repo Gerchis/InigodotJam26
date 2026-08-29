@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://bman8aenmst8u" path="res://assets/font/kg_second_chances/KGSecondChancesSketch.ttf" id="1_7hlbp"]
 [ext_resource type="FontFile" uid="uid://cs4polfbiabkx" path="res://assets/font/kg_second_chances/KGSecondChancesSolid.ttf" id="2_iv5qn"]
+[ext_resource type="Texture2D" uid="uid://c7x7e2kvywnia" path="res://assets/ui/GrabberSlider_001.png" id="3_b63vn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pl81p"]
 line_spacing = -22.2
@@ -50,7 +51,7 @@ content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(0.90588236, 0.8117647, 1, 1)
+bg_color = Color(0.90588236, 0.8117647, 1, 0.60784316)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -62,12 +63,17 @@ content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
 content_margin_bottom = 4.0
-bg_color = Color(0.90588236, 0.8117647, 1, 1)
+bg_color = Color(0.90588236, 0.8117647, 1, 0.60784316)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 corner_detail = 6
+
+[sub_resource type="LabelSettings" id="LabelSettings_13r3h"]
+font = ExtResource("2_iv5qn")
+font_size = 20
+font_color = Color(0.14499879, 0.10349763, 0.25894788, 1)
 
 [node name="Menu" type="Control" unique_id=2104215880]
 layout_mode = 3
@@ -240,15 +246,15 @@ label_settings = SubResource("LabelSettings_kxkac")
 
 [node name="Button" type="Button" parent="." unique_id=1942817382]
 layout_mode = 0
-offset_left = 276.0
-offset_top = 347.99997
-offset_right = 380.29
-offset_bottom = 400.99997
-rotation = -0.109747335
-theme_override_colors/font_color = Color(0.17161348, 0.12358882, 0.3018392, 1)
+offset_left = 268.00003
+offset_top = 325.00003
+offset_right = 403.00003
+offset_bottom = 404.00003
+rotation = -0.14222077
+theme_override_colors/font_color = Color(0.14509805, 0.101960786, 0.25882354, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_iv5qn")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 56
 text = "Play"
 flat = true
 
@@ -263,7 +269,19 @@ offset_right = 459.0
 offset_bottom = -126.0
 grow_vertical = 0
 rotation = -0.18954632
+theme_override_icons/grabber = ExtResource("3_b63vn")
+theme_override_icons/grabber_highlight = ExtResource("3_b63vn")
 theme_override_styles/slider = SubResource("StyleBoxFlat_iv5qn")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_b63vn")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_10vvg")
 value = 35.0
+
+[node name="Label17" type="Label" parent="." unique_id=359165848]
+layout_mode = 0
+offset_left = 306.00003
+offset_top = 417.0
+offset_right = 425.00003
+offset_bottom = 456.0
+rotation = -0.17366052
+text = "Volume"
+label_settings = SubResource("LabelSettings_13r3h")
