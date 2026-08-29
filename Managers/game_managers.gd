@@ -1,3 +1,3 @@
 extends Node
 
-var in_menu: bool = true
+var in_menu: bool = false

@@ -8,6 +8,8 @@ extends CharacterBody3D
 var move_input: Vector2 = Vector2.ZERO
 var face_vector: Vector2 = Vector2.DOWN
 
+var can_move: bool = true
+
 @onready var animation_tree: AnimationTree = %AnimationTree
 
 func _process(delta: float) -> void:
@@ -17,13 +19,17 @@ func _process(delta: float) -> void:
 	process_animations()
 
 func _physics_process(delta: float) -> void:
-	process_movement(delta)
-	process_gravity(delta)
+	if can_move:
+		process_movement(delta)
+		process_gravity(delta)
 	
 	move_and_slide()
 
 func process_inputs() -> void:
 	move_input = Input.get_vector("move_right", "move_left", "move_down", "move_up")
+	
+	if Input.is_action_just_pressed("attack"):
+		attack()
 
 func process_movement(delta: float) -> void:
 	var target_velocity: Vector2 = move_input * speed
@@ -41,7 +47,20 @@ func process_facing() -> void:
 func jump() -> void:
 	velocity.y = jump_force
 
+func attack() -> void:
+	animation_tree.set("parameters/conditions/is_attacking", true)
+	animation_tree.set.call_deferred("parameters/conditions/is_attacking", false)
+
+func stop_moving() -> void:
+	velocity = Vector3.ZERO
+	can_move = false
+
+func continue_moving() -> void:
+	can_move = true
+
 func process_animations() -> void:
 	animation_tree.set("parameters/conditions/is_idle", velocity.x == 0.0 and velocity.z == 0.0)
 	animation_tree.set("parameters/conditions/is_walking", velocity.x != 0.0 or velocity.z != 0.0)
 	animation_tree.set("parameters/walk/blend_position", face_vector)
+	if face_vector.x != 0.0:
+		animation_tree.set("parameters/bump/blend_position", -face_vector.x)
