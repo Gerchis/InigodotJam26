@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d3vany3uxpjkl"]
 
 [ext_resource type="Script" uid="uid://cxd42i3rodkl7" path="res://entities/player/player_controller.gd" id="1_abrql"]
-[ext_resource type="Texture2D" uid="uid://dpfqtf5nui58n" path="res://assets/spritesheet/spriteSheet_Pj_004.png" id="2_sglur"]
+[ext_resource type="Texture2D" uid="uid://cn3vkx7vxua3e" path="res://assets/spritesheet/spriteSheet_Pj_004.png" id="2_sglur"]
 [ext_resource type="PackedScene" uid="uid://0v7w4od8b2ij" path="res://entities/weight_system/weight_system.tscn" id="3_sglur"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gxwvi"]
@@ -245,6 +245,7 @@ libraries/ = SubResource("AnimationLibrary_qiwj3")
 
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=1139557349]
 unique_name_in_owner = true
+root_node = NodePath("%AnimationTree/..")
 tree_root = SubResource("AnimationNodeStateMachine_gxwvi")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/is_idle = false

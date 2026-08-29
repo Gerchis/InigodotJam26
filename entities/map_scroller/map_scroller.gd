@@ -48,6 +48,7 @@ var current_distance: float = 0.0
 var current_height: float = 0.0
 
 func _process(delta: float) -> void:
+	if GameManagers.in_menu: return
 	process_scroll_elements(delta)
 	
 	process_building_spawn(delta)
@@ -75,7 +76,6 @@ func process_scroll_elements(delta) -> void:
 		perpendicular_element.global_position.z += new_offset.y
 		if perpendicular_element.global_position.z < -delete_threshold:
 			perpendicular_element.queue_free()
-			print("WWWW")
 	
 	current_distance += abs(new_offset.y)
 	current_height = plane.global_position.y - bottom_point

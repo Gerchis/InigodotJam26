@@ -399,8 +399,9 @@ angle_max = 360.0
 scale_amount_curve = SubResource("Curve_ydxtj")
 color_initial_ramp = SubResource("Gradient_ydxtj")
 
-[node name="PaperPlane" parent="ParalelScroll/FallingScroll" unique_id=1163163540 instance=ExtResource("2_dq0fv")]
+[node name="PaperPlane" parent="ParalelScroll/FallingScroll" unique_id=1163163540 node_paths=PackedStringArray("player") instance=ExtResource("2_dq0fv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03264284, -0.064721584, 0.39374775)
+player = NodePath("../Player")
 
 [node name="Camera3D" type="Camera3D" parent="ParalelScroll/FallingScroll" unique_id=749126216 node_paths=PackedStringArray("plane")]
 transform = Transform3D(-1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, -1, 0, 0.50041205, -1.6567866)

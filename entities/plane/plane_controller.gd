@@ -1,6 +1,8 @@
 class_name PlaneController
 extends Node3D
 
+@export var player: PlayerController
+
 @export var horizontal_rotation_curve: Curve
 @export var vertical_rotation_curve: Curve
 
@@ -28,6 +30,7 @@ var pitch_offset: float = 0.0
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 
 func _process(delta: float) -> void:
+	if GameManagers.in_menu: return
 	process_weight_vector()
 	apply_rotation(delta)
 	process_subtle_movement(delta)
@@ -66,3 +69,4 @@ func process_subtle_movement(delta) -> void:
 
 func boost() -> void:
 	animation_player.play("boost")
+	player.jump()

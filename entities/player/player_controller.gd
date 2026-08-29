@@ -3,6 +3,7 @@ extends CharacterBody3D
 
 @export var speed: float = 1.0
 @export var gravity: float = 4.0
+@export var jump_force: float = 2.0
 
 var move_input: Vector2 = Vector2.ZERO
 var face_vector: Vector2 = Vector2.DOWN
@@ -10,6 +11,7 @@ var face_vector: Vector2 = Vector2.DOWN
 @onready var animation_tree: AnimationTree = %AnimationTree
 
 func _process(delta: float) -> void:
+	if GameManagers.in_menu: return
 	process_inputs()
 	process_facing()
 	process_animations()
@@ -35,6 +37,9 @@ func process_gravity(delta: float) -> void:
 func process_facing() -> void:
 	if move_input == Vector2.ZERO: return
 	face_vector = move_input
+
+func jump() -> void:
+	velocity.y = jump_force
 
 func process_animations() -> void:
 	animation_tree.set("parameters/conditions/is_idle", velocity.x == 0.0 and velocity.z == 0.0)
