@@ -1,7 +1,10 @@
 class_name PlayerController
 extends CharacterBody3D
 
+signal boost
+
 @export var speed: float = 1.0
+@export var accel: float = 10.0
 @export var gravity: float = 4.0
 @export var jump_force: float = 2.0
 @export var push_force: float = 1.0
@@ -21,23 +24,24 @@ func _process(delta: float) -> void:
 	process_animations()
 
 func _physics_process(delta: float) -> void:
-	if can_move:
-		process_movement(delta)
-		process_gravity(delta)
+	process_movement(delta)
+	process_gravity(delta)
 	
 	move_and_slide()
 
 func process_inputs() -> void:
 	move_input = Input.get_vector("move_right", "move_left", "move_down", "move_up")
 	
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("attack") and can_move:
 		attack()
 
 func process_movement(delta: float) -> void:
 	var target_velocity: Vector2 = move_input * speed
+	if not can_move: target_velocity = Vector2.ZERO
+	var actual_velocity: Vector2 = Vector2(velocity.x, velocity.z).move_toward(target_velocity, accel * delta)
 	
-	velocity.x = target_velocity.x
-	velocity.z = target_velocity.y
+	velocity.x = actual_velocity.x
+	velocity.z = actual_velocity.y
 
 func process_gravity(delta: float) -> void:
 	velocity.y -= gravity * delta
@@ -48,13 +52,13 @@ func process_facing() -> void:
 
 func jump() -> void:
 	velocity.y = jump_force
+	boost.emit()
 
 func attack() -> void:
 	animation_tree.set("parameters/conditions/is_attacking", true)
 	animation_tree.set.call_deferred("parameters/conditions/is_attacking", false)
 
 func stop_moving() -> void:
-	velocity = Vector3.ZERO
 	can_move = false
 
 func continue_moving() -> void:
@@ -75,5 +79,6 @@ func push() -> void:
 	for body in bump_area.get_overlapping_bodies():
 		if not body is CharacterBody3D: continue
 		var push_direction: Vector3 = global_position.direction_to(body.global_position)
+		push_direction.y = 0.0
+		push_direction = push_direction.normalized()
 		body.velocity = push_direction * push_force
-		print("PUSH")
