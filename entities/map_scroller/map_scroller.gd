@@ -55,6 +55,8 @@ var posible_buildings: Array[PackedScene] = [
 	BUILDING_5,
 ]
 var current_speed: float = initial_vertical_speed
+var max_speed: float = 0.0
+var min_speed: float = 0.0
 var current_distance: float = 0.0
 var current_height: float = 0.0
 var ring_spawn_point: float = 50.0
@@ -82,6 +84,8 @@ func process_scroll_elements(delta) -> void:
 	var target_speed: float = base_speed + speed_offset
 	
 	current_speed = move_toward(current_speed, target_speed, max_acceleration * delta)
+	max_speed = base_speed * max_speed_mod
+	min_speed = base_speed * min_speed_mod
 	if plane.in_boost:
 		current_speed = base_speed * max_speed_mod * boost_velocity_mod
 	
@@ -130,7 +134,7 @@ func spawn_building(in_range: bool = true) -> void:
 func update_ui_values() -> void:
 	UiSignals.update_distance.emit(current_distance)
 	UiSignals.update_height.emit(current_height)
-	UiSignals.update_velocity.emit(current_speed)
+	UiSignals.update_velocity.emit(current_speed, max_speed * 2.0, min_speed)
 
 func transition_to_game() -> void:
 	animation_player.play("transition")

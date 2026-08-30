@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bc1hvnm1xintd"]
+
+[ext_resource type="Texture2D" uid="uid://bk5svlrv88pa8" path="res://assets/spritesheet/spriteSheet_Enemigo_001.png" id="1_ksmh7"]
+[ext_resource type="PackedScene" uid="uid://0v7w4od8b2ij" path="res://entities/weight_system/weight_system.tscn" id="2_im2q6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_im2q6"]
+radius = 0.038085938
+height = 0.2
+
+[node name="Enemy" type="CharacterBody3D" unique_id=117027062]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=510471089]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.099999994, 0)
+shape = SubResource("CapsuleShape3D_im2q6")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=376716425]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.09733975, 0)
+flip_h = true
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_ksmh7")
+hframes = 3
+vframes = 2
+frame = 2
+
+[node name="weight_system" parent="." unique_id=1258181792 instance=ExtResource("2_im2q6")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1038815451]

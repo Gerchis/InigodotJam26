@@ -173,6 +173,30 @@ tracks/13/keys = {
 "update": 0,
 "values": [Vector2(-299, 1109)]
 }
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("TextureRect15:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(348.99997, 1637.9999)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("TextureRect16:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1130, 1591)]
+}
 
 [sub_resource type="Animation" id="Animation_dgun5"]
 resource_name = "transition"
@@ -358,6 +382,30 @@ tracks/14/keys = {
 "method": &"apply_transition"
 }]
 }
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("TextureRect15:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(303, 1918.9999), Vector2(383, 15.999756)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("TextureRect16:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1233, 2001), Vector2(1145, -91.00012)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_35afe"]
 _data = {
@@ -384,7 +432,7 @@ layout_mode = 0
 offset_left = -220.0
 offset_top = 618.0
 offset_right = 257.19177
-offset_bottom = 859.9989
+offset_bottom = 859.99884
 texture = ExtResource("1_1boqy")
 expand_mode = 1
 
@@ -392,7 +440,7 @@ expand_mode = 1
 layout_mode = 0
 offset_left = 135.0
 offset_top = 731.0
-offset_right = 612.18964
+offset_right = 612.18945
 offset_bottom = 973.00024
 texture = ExtResource("1_1boqy")
 expand_mode = 1
@@ -401,8 +449,8 @@ expand_mode = 1
 layout_mode = 0
 offset_left = 642.0
 offset_top = 606.0
-offset_right = 1119.1875
-offset_bottom = 847.99927
+offset_right = 1119.1868
+offset_bottom = 847.9994
 texture = ExtResource("1_1boqy")
 expand_mode = 1
 
@@ -411,7 +459,7 @@ layout_mode = 0
 offset_left = 65.0
 offset_top = 628.0
 offset_right = 739.1918
-offset_bottom = 1011.9992
+offset_bottom = 1011.9994
 texture = ExtResource("1_1boqy")
 expand_mode = 1
 
@@ -420,7 +468,7 @@ layout_mode = 0
 offset_left = -185.0
 offset_top = 806.0
 offset_right = 310.0
-offset_bottom = 1054.0
+offset_bottom = 1054.0001
 texture = ExtResource("1_1boqy")
 expand_mode = 1
 
@@ -428,7 +476,7 @@ expand_mode = 1
 layout_mode = 0
 offset_left = 248.0
 offset_top = 931.0
-offset_right = 743.00085
+offset_right = 743.0004
 offset_bottom = 1179.001
 texture = ExtResource("1_1boqy")
 expand_mode = 1
@@ -437,8 +485,29 @@ expand_mode = 1
 layout_mode = 0
 offset_left = 650.0
 offset_top = 834.0
-offset_right = 1245.9884
-offset_bottom = 1177.0
+offset_right = 1245.9878
+offset_bottom = 1177.0002
+texture = ExtResource("1_1boqy")
+expand_mode = 1
+
+[node name="TextureRect15" type="TextureRect" parent="." unique_id=1532674435]
+layout_mode = 0
+offset_left = 348.99997
+offset_top = 1637.9999
+offset_right = 841.00085
+offset_bottom = 1876.0002
+rotation = -2.9777734
+texture = ExtResource("1_1boqy")
+expand_mode = 1
+
+[node name="TextureRect16" type="TextureRect" parent="." unique_id=285842170]
+layout_mode = 0
+offset_left = 1130.0
+offset_top = 1591.0
+offset_right = 1622.001
+offset_bottom = 1829.0005
+rotation = -3.3184369
+scale = Vector2(1.5309631, 1.6129882)
 texture = ExtResource("1_1boqy")
 expand_mode = 1
 
@@ -447,7 +516,7 @@ layout_mode = 0
 offset_left = -299.0
 offset_top = 1109.0
 offset_right = 297.0
-offset_bottom = 1451.9998
+offset_bottom = 1451.9999
 texture = ExtResource("1_1boqy")
 expand_mode = 1
 
@@ -455,8 +524,8 @@ expand_mode = 1
 layout_mode = 0
 offset_left = 466.0
 offset_top = 1003.0
-offset_right = 1233.006
-offset_bottom = 1465.0002
+offset_right = 1233.0061
+offset_bottom = 1465.0004
 texture = ExtResource("1_1boqy")
 expand_mode = 1
 
@@ -464,7 +533,7 @@ expand_mode = 1
 layout_mode = 0
 offset_left = 59.0
 offset_top = 858.0
-offset_right = 550.99915
+offset_right = 550.99927
 offset_bottom = 1095.9998
 texture = ExtResource("1_1boqy")
 expand_mode = 1
@@ -474,7 +543,7 @@ layout_mode = 0
 offset_left = -226.0
 offset_top = 978.0
 offset_right = 266.0
-offset_bottom = 1216.0007
+offset_bottom = 1216.001
 texture = ExtResource("1_1boqy")
 expand_mode = 1
 
@@ -482,7 +551,7 @@ expand_mode = 1
 layout_mode = 0
 offset_left = 129.0
 offset_top = 1221.0
-offset_right = 621.0011
+offset_right = 621.0005
 offset_bottom = 1459.0005
 texture = ExtResource("1_1boqy")
 expand_mode = 1
@@ -491,8 +560,8 @@ expand_mode = 1
 layout_mode = 0
 offset_left = 416.0
 offset_top = 830.0
-offset_right = 907.9938
-offset_bottom = 1068.0002
+offset_right = 907.99585
+offset_bottom = 1068.0005
 texture = ExtResource("1_1boqy")
 expand_mode = 1
 
@@ -500,7 +569,7 @@ expand_mode = 1
 layout_mode = 0
 offset_left = 123.0
 offset_top = 699.0
-offset_right = 765.9983
-offset_bottom = 1017.0007
+offset_right = 765.99805
+offset_bottom = 1017.0008
 texture = ExtResource("1_1boqy")
 expand_mode = 1
