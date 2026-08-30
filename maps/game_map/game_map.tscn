@@ -15,7 +15,7 @@
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i2q3s"]
 sky_top_color = Color(0.50580645, 0.8302818, 0.99999994, 1)
 sky_horizon_color = Color(0.9655027, 0.9729665, 0.9988176, 1)
-ground_bottom_color = Color(0.9166399, 0.91663986, 0.9166398, 1)
+ground_bottom_color = Color(0.85188496, 0.93637526, 0.94505125, 1)
 ground_horizon_color = Color(0.849552, 0.9075207, 0.96845573, 1)
 
 [sub_resource type="Sky" id="Sky_5xtbe"]
@@ -33,6 +33,7 @@ fog_density = 0.0
 fog_sky_affect = 0.0
 fog_height = -60.0
 fog_height_density = 0.15
+adjustment_enabled = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_bpkij"]
 size = Vector2(500, 961.75)
