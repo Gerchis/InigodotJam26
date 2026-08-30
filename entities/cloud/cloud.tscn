@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bsqnyq021046f"]
+
+[ext_resource type="Texture2D" uid="uid://cij251xxwyecj" path="res://assets/ui/cloud2D_001.png" id="1_vx5n7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lyd0k"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+albedo_texture = ExtResource("1_vx5n7")
+billboard_mode = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pl81p"]
+material = SubResource("StandardMaterial3D_lyd0k")
+size = Vector2(30, 20)
+orientation = 2
+
+[node name="Cloud" type="Node3D" unique_id=1932594875]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1386283491]
+mesh = SubResource("PlaneMesh_pl81p")
