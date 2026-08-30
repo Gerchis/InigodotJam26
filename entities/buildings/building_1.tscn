@@ -2,6 +2,10 @@
 
 [ext_resource type="ArrayMesh" uid="uid://b1gf3a5ps43bw" path="res://assets/gltf_files/buildings/cityBuild(0_0_2)_Cube_004.res" id="1_ii3xn"]
 [ext_resource type="ArrayMesh" uid="uid://bc13asxprb2a" path="res://assets/gltf_files/buildings/cityBuild(0_0_2)_Cube_005.res" id="2_6btp8"]
+[ext_resource type="Script" uid="uid://bao1iu1prmdau" path="res://entities/dead_area/dead_area.gd" id="3_6btp8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2s5mr"]
+size = Vector3(15.866211, 196.37527, 15)
 
 [node name="Building1" type="Node3D" unique_id=120542104]
 
@@ -56,3 +60,14 @@ mesh = ExtResource("1_ii3xn")
 [node name="MeshInstance3D13" type="MeshInstance3D" parent="." unique_id=1989188660]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.07165134, -19.774033, -0.5016941)
 mesh = ExtResource("1_ii3xn")
+
+[node name="DeadArea" type="Area3D" parent="." unique_id=1077640150]
+collision_layer = 4
+collision_mask = 4
+monitorable = false
+script = ExtResource("3_6btp8")
+metadata/_custom_type_script = "uid://bao1iu1prmdau"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeadArea" unique_id=196074653]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11376953, 70.27937, 3.7182465)
+shape = SubResource("BoxShape3D_2s5mr")

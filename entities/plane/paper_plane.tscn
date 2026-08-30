@@ -42,6 +42,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mesh:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -0.0670774)]
+}
 
 [sub_resource type="Animation" id="Animation_jl0ao"]
 resource_name = "boost"
@@ -71,10 +83,38 @@ tracks/1/keys = {
 "values": [true, false]
 }
 
+[sub_resource type="Animation" id="Animation_8e4vu"]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mesh:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-6.2831855, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mesh:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -0.0670774), Vector3(0, -1.470794, -1.4591613)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8e4vu"]
 _data = {
 &"RESET": SubResource("Animation_28g18"),
-&"boost": SubResource("Animation_jl0ao")
+&"boost": SubResource("Animation_jl0ao"),
+&"die": SubResource("Animation_8e4vu")
 }
 
 [node name="PaperPlane" type="Node3D" unique_id=1016131883]

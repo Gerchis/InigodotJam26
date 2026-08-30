@@ -64,3 +64,7 @@ func process_animations() -> void:
 	animation_tree.set("parameters/walk/blend_position", face_vector)
 	if face_vector.x != 0.0:
 		animation_tree.set("parameters/bump/blend_position", -face_vector.x)
+
+func die() -> void:
+	animation_tree.set("parameters/conditions/is_dead", true)
+	jump()
