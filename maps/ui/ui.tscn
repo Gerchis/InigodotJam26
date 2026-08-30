@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://udlx10htu3" path="res://assets/ui/Huddistance_001.png" id="4_6l0pj"]
 [ext_resource type="FontFile" uid="uid://cs4polfbiabkx" path="res://assets/font/kg_second_chances/KGSecondChancesSolid.ttf" id="5_ex18o"]
 [ext_resource type="Texture2D" uid="uid://dm21lcxv4juup" path="res://assets/ui/Hudarrowvelocity_001.png" id="6_6l0pj"]
-[ext_resource type="Texture2D" uid="uid://dtkpf6wjergme" path="res://assets/ui/Hudpointheight_001.png" id="7_8tv76"]
+[ext_resource type="Texture2D" uid="uid://ckr83d5nd53js" path="res://assets/ui/Hudplaneheight_001.png" id="7_8tv76"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0d6ao"]
 font = ExtResource("5_ex18o")
@@ -28,10 +28,6 @@ region = Rect2(72, 29, 12, 10)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6l0pj"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8tv76"]
-atlas = ExtResource("7_8tv76")
-region = Rect2(86, 62, 5, 4)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0mk7c"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -100,7 +96,7 @@ label_settings = SubResource("LabelSettings_6l0pj")
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="VelocitSlider" type="HSlider" parent="." unique_id=506941696]
+[node name="VelocitySlider" type="HSlider" parent="." unique_id=506941696]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 115.0
@@ -114,6 +110,7 @@ theme_override_icons/tick = SubResource("AtlasTexture_ex18o")
 theme_override_styles/slider = SubResource("StyleBoxFlat_6l0pj")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_6l0pj")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_6l0pj")
+step = 0.01
 allow_greater = true
 allow_lesser = true
 editable = false
@@ -123,10 +120,10 @@ scrollable = false
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 53.0
-offset_top = 113.0
+offset_top = 110.0
 offset_right = 69.0
 offset_bottom = 216.0
-theme_override_icons/grabber_disabled = SubResource("AtlasTexture_8tv76")
+theme_override_icons/grabber_disabled = ExtResource("7_8tv76")
 theme_override_styles/slider = SubResource("StyleBoxFlat_0mk7c")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_0mk7c")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_0mk7c")
