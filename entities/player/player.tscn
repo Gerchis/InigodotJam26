@@ -95,11 +95,14 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.25),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
 "args": [],
 "method": &"stop_moving"
+}, {
+"args": [],
+"method": &"push"
 }, {
 "args": [],
 "method": &"continue_moving"
@@ -398,7 +401,10 @@ states/idle/position = Vector2(349, 100)
 states/walk/node = SubResource("AnimationNodeBlendSpace2D_bls4j")
 states/walk/position = Vector2(567, 100)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_sglur"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_bls4j"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_fkugw"), "idle", "bump", SubResource("AnimationNodeStateMachineTransition_wvtmh"), "walk", "bump", SubResource("AnimationNodeStateMachineTransition_7thud"), "bump", "idle", SubResource("AnimationNodeStateMachineTransition_a1qjk"), "walk", "death", SubResource("AnimationNodeStateMachineTransition_j3ovn"), "bump", "death", SubResource("AnimationNodeStateMachineTransition_afbqv"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_gx6sm")]
-graph_offset = Vector2(-244, 76)
+graph_offset = Vector2(-280, -93)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_j4bll"]
+radius = 0.3
 
 [node name="Player" type="CharacterBody3D" unique_id=860884995]
 script = ExtResource("1_abrql")
@@ -432,3 +438,11 @@ parameters/conditions/is_idle = false
 parameters/conditions/is_walking = false
 parameters/bump/blend_position = 0.10005653
 parameters/walk/blend_position = Vector2(0.2883582, -0.3109244)
+
+[node name="BumpArea" type="Area3D" parent="." unique_id=954605382]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BumpArea" unique_id=869067734]
+shape = SubResource("SphereShape3D_j4bll")

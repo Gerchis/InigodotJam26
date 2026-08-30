@@ -4,6 +4,7 @@ extends CharacterBody3D
 @export var speed: float = 1.0
 @export var gravity: float = 4.0
 @export var jump_force: float = 2.0
+@export var push_force: float = 1.0
 
 var move_input: Vector2 = Vector2.ZERO
 var face_vector: Vector2 = Vector2.DOWN
@@ -11,6 +12,7 @@ var face_vector: Vector2 = Vector2.DOWN
 var can_move: bool = true
 
 @onready var animation_tree: AnimationTree = %AnimationTree
+@onready var bump_area: Area3D = %BumpArea
 
 func _process(delta: float) -> void:
 	if GameManagers.in_menu: return
@@ -68,3 +70,10 @@ func process_animations() -> void:
 func die() -> void:
 	animation_tree.set("parameters/conditions/is_dead", true)
 	jump()
+
+func push() -> void:
+	for body in bump_area.get_overlapping_bodies():
+		if not body is CharacterBody3D: continue
+		var push_direction: Vector3 = global_position.direction_to(body.global_position)
+		body.velocity = push_direction * push_force
+		print("PUSH")

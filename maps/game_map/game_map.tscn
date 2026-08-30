@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c1wbr78i7pnj3" path="res://entities/buildings/building_1.tscn" id="3_bgx8x"]
 [ext_resource type="PackedScene" uid="uid://8qpxbmbxv8np" path="res://entities/buildings/building_2.tscn" id="4_67kxf"]
 [ext_resource type="PackedScene" uid="uid://b4d0bj1ucwwfm" path="res://entities/buildings/building_3.tscn" id="5_owto4"]
+[ext_resource type="PackedScene" uid="uid://e6vofyrhux10" path="res://entities/enemy_plane/enemy_plane.tscn" id="6_67kxf"]
 [ext_resource type="PackedScene" uid="uid://bv5tfpcwpmod0" path="res://entities/buildings/building_4.tscn" id="6_vrrsu"]
 [ext_resource type="PackedScene" uid="uid://bx02448onab6x" path="res://entities/buildings/building_5.tscn" id="7_gel2u"]
 [ext_resource type="Script" uid="uid://b1lj0dmcnroux" path="res://entities/map_scroller/map_scroller.gd" id="8_7cpxw"]
@@ -296,6 +297,285 @@ tracks/19/keys = {
 "update": 0,
 "values": [Vector3(66.540215, -37.4595, -52.529785)]
 }
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("ParalelScroll/FallingScroll/RightPlane:position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.3301382, 0.4037876, 0.28319597)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("ParalelScroll/FallingScroll/RightPlane:rotation")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.17910077, 0, 0)]
+}
+tracks/22/type = "bezier"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("ParalelScroll/FallingScroll/RightPlane:position:x")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1.3301382, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/23/type = "bezier"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("ParalelScroll/FallingScroll/RightPlane:position:y")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.4037876, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/24/type = "bezier"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("ParalelScroll/FallingScroll/RightPlane:position:z")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.28319597, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/25/type = "bezier"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("ParalelScroll/FallingScroll/RightPlane:rotation:x")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.17910077, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/26/type = "bezier"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("ParalelScroll/FallingScroll/RightPlane:rotation:y")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/27/type = "bezier"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("ParalelScroll/FallingScroll/RightPlane:rotation:z")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/28/type = "bezier"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("ParalelScroll/FallingScroll/LeftPlane:position:x")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.4177082, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/29/type = "bezier"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("ParalelScroll/FallingScroll/LeftPlane:position:y")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.4037876, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/30/type = "bezier"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("ParalelScroll/FallingScroll/LeftPlane:position:z")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.28319597, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/31/type = "bezier"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("ParalelScroll/FallingScroll/LeftPlane:rotation:x")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.17910077, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/32/type = "bezier"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("ParalelScroll/FallingScroll/LeftPlane:rotation:y")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/33/type = "bezier"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("ParalelScroll/FallingScroll/LeftPlane:rotation:z")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("ParalelScroll/FallingScroll/LeftPlane:visible")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("ParalelScroll/FallingScroll/RightPlane:visible")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_owto4"]
+resource_name = "left_assault"
+length = 2.000003437641636
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParalelScroll/FallingScroll/LeftPlane:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 0),
+"points": PackedFloat32Array(4.353579, 0, 0, 0.13333334, -2.8585443, 1.4177082, -0.25, 0, 0.25, 0, 1.4177082, -0.25, 0, 0.4333334, 0.14463925, 4.353579, 0, 0, 0, -2.9482946),
+"times": PackedFloat32Array(0, 0.8333333, 1.1666666, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ParalelScroll/FallingScroll/LeftPlane:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 0),
+"points": PackedFloat32Array(0.4037876, 0, 0, 0.09444445, 0, 0.4037876, -0.25, 0, 0.25, 0, 0.4037876, -0.25, 0, 0.25, 0, 0.4037876, 0, 0, 0.09444445, 0),
+"times": PackedFloat32Array(0, 0.8333333, 1.1666666, 2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ParalelScroll/FallingScroll/LeftPlane:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 0),
+"points": PackedFloat32Array(0.28319597, 0, 0, 0.09444445, 0, 0.28319597, -0.25, 0, 0.25, 0, 0.28319597, -0.25, 0, 0.25, 0, 0.28319597, 0, 0, 0.09444445, 0),
+"times": PackedFloat32Array(0, 0.8333333, 1.1666666, 2)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ParalelScroll/FallingScroll/LeftPlane:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 2),
+"points": PackedFloat32Array(-0.15489659, 0, 0, 0.09444445, -0.00403403, -0.17910077, -0.25, 0, 0.25, 0, -0.17910077, -0.25, 0, 0.25, 0, -0.15465355, -0.13888946, -0.0040745367, 0, 0),
+"times": PackedFloat32Array(0, 0.8333333, 1.1666666, 2.0000033)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ParalelScroll/FallingScroll/LeftPlane:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 2),
+"points": PackedFloat32Array(-0.09027431, 0, 0, 0.09444445, 0.015045719, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0.09069224, -0.13888946, -0.015115374, 0, 0),
+"times": PackedFloat32Array(0, 0.8333333, 1.1666666, 2.0000033)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ParalelScroll/FallingScroll/LeftPlane:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 2),
+"points": PackedFloat32Array(0.5306091, 0, 0, 0.09444445, -0.088434845, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -0.5333201, -0.13888946, 0.08888669, 0, 0),
+"times": PackedFloat32Array(0, 0.8333333, 1.1666666, 2.0000033)
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ParalelScroll/FallingScroll/LeftPlane:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.033333335, 1.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ParalelScroll/FallingScroll/LeftPlane")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1, 1.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [-1.0],
+"method": &"swap_enemy"
+}, {
+"args": [],
+"method": &"show_sprite"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_tc2tb"]
 resource_name = "menu"
@@ -434,6 +714,105 @@ tracks/10/keys = {
 "values": [Vector3(66.540215, -37.4595, -52.529785), Vector3(69.88636, -37.4595, -52.529785), Vector3(66.31703, -37.4595, -52.529785), Vector3(68.80223, -37.4595, -52.529785)]
 }
 
+[sub_resource type="Animation" id="Animation_67kxf"]
+resource_name = "right_assault"
+length = 2.0000033
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ParalelScroll/FallingScroll/RightPlane:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 0),
+"points": PackedFloat32Array(-4.537873, 0, 0, 0.2, 3.040513, -1.3301382, -0.25, 0, 0.25, 0, -1.3301382, -0.25, 0, 0.25, 0, -4.537873, 0, 0, 0, 3.0841048),
+"times": PackedFloat32Array(0, 0.9, 1.1666666, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ParalelScroll/FallingScroll/RightPlane:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 0),
+"points": PackedFloat32Array(0.56234294, 0, 0, 0.14444445, -0.026425889, 0.4037876, -0.25, 0, 0.25, 0, 0.4037876, -0.25, 0, 0.25, 0, 0.56234294, 0, 0, 0.14444445, -0.026425889),
+"times": PackedFloat32Array(0, 0.9, 1.1666666, 2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ParalelScroll/FallingScroll/RightPlane:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 0),
+"points": PackedFloat32Array(0.28319597, 0, 0, 0.14444445, 0, 0.28319597, -0.25, 0, 0.25, 0, 0.28319597, -0.25, 0, 0.25, 0, 0.28319597, 0, 0, 0.14444445, 0),
+"times": PackedFloat32Array(0, 0.9, 1.1666666, 2)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ParalelScroll/FallingScroll/RightPlane:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 2),
+"points": PackedFloat32Array(-0.15647446, 0, 0, 0.14444445, -0.003771052, -0.17910077, -0.25, 0, 0.25, 0, -0.17910077, -0.25, 0, 0.25, 0, -0.15326978, -0.13333389, -0.0043051643, 0, 0),
+"times": PackedFloat32Array(0, 0.9, 1.1666666, 2.0000033)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ParalelScroll/FallingScroll/RightPlane:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 2),
+"points": PackedFloat32Array(0.087495394, 0, 0, 0.14444445, -0.014582566, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -0.093023494, -0.13333389, 0.015503917, 0, 0),
+"times": PackedFloat32Array(0, 0.9, 1.1666666, 2.0000033)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ParalelScroll/FallingScroll/RightPlane:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0, 2),
+"points": PackedFloat32Array(-0.5126878, 0, 0, 0.14444445, 0.085447975, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0.5485215, -0.13333389, -0.09142026, 0, 0),
+"times": PackedFloat32Array(0, 0.9, 1.1666666, 2.0000033)
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ParalelScroll/FallingScroll/RightPlane:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.033333335, 1.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ParalelScroll/FallingScroll/RightPlane")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1, 1.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [1.0],
+"method": &"swap_enemy"
+}, {
+"args": [],
+"method": &"show_sprite"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_cw3jw"]
 resource_name = "transition"
 length = 1.1
@@ -563,7 +942,9 @@ tracks/9/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n5cf4"]
 _data = {
 &"RESET": SubResource("Animation_ahoxu"),
+&"left_assault": SubResource("Animation_owto4"),
 &"menu": SubResource("Animation_tc2tb"),
+&"right_assault": SubResource("Animation_67kxf"),
 &"transition": SubResource("Animation_cw3jw")
 }
 
@@ -898,6 +1279,16 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 113.
 
 [node name="FallingScroll" type="Node3D" parent="ParalelScroll" unique_id=1479074396]
 
+[node name="RightPlane" parent="ParalelScroll/FallingScroll" unique_id=1339234768 node_paths=PackedStringArray("player") instance=ExtResource("6_67kxf")]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.98400384, 0.17814481, 0, -0.17814472, 0.9840044, -1.3301382, 0.4037876, 0.28319597)
+visible = false
+player = NodePath("../Player")
+
+[node name="LeftPlane" parent="ParalelScroll/FallingScroll" unique_id=261683673 node_paths=PackedStringArray("player") instance=ExtResource("6_67kxf")]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.98400396, 0.1781448, 0, -0.17814474, 0.98400426, 1.4177082, 0.4037876, 0.28319597)
+visible = false
+player = NodePath("../Player")
+
 [node name="ParticleSystem" type="CPUParticles3D" parent="ParalelScroll/FallingScroll" unique_id=1556470020]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50041205, 8.508955)
 speed_scale = 0.81
@@ -922,7 +1313,7 @@ transform = Transform3D(0.97306585, -0.23052742, 0, 0.23052742, 0.97306585, 0, 0
 player = NodePath("../Player")
 
 [node name="Camera3D" type="Camera3D" parent="ParalelScroll/FallingScroll" unique_id=2077820677]
-transform = Transform3D(0.9731982, 0.08130995, -0.21511386, 0, 0.93540746, 0.3535708, 0.22996801, -0.34409437, 0.91033715, -1.9671715, 0.5992451, 2.8961277)
+transform = Transform3D(0.9731982, 0.08130994, -0.21511386, 0, 0.93540734, 0.3535708, 0.22996801, -0.34409428, 0.91033715, -1.9671715, 0.5992451, 2.8961277)
 current = true
 fov = 50.0
 

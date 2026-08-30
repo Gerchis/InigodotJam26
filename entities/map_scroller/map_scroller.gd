@@ -45,6 +45,8 @@ const POWER_RING = preload("uid://cn2d67illxdd7")
 @export var ring_spawn_vertical_range: float = 7.0
 @export var ring_spawn_forward_point: float = 100.0
 
+@export var assault_distance_trigger: float = 300.0
+
 var building_spawner_cooldown_timer: float = 0.0
 var building_spawn_point: float = 0.0
 var posible_buildings: Array[PackedScene] = [
@@ -60,6 +62,7 @@ var min_speed: float = 0.0
 var current_distance: float = 0.0
 var current_height: float = 0.0
 var ring_spawn_point: float = 50.0
+var next_assault: float = 100.0
 
 func _ready() -> void:
 	UiSignals.start_game.connect(transition_to_game)
@@ -70,6 +73,7 @@ func _process(delta: float) -> void:
 	
 	process_building_spawn()
 	process_ring_spawn()
+	process_asault()
 	
 	update_ui_values()
 
@@ -154,3 +158,18 @@ func spawn_ring() -> void:
 	var ring_instance: Node3D = POWER_RING.instantiate()
 	perpendicular_scroll.add_child(ring_instance)
 	ring_instance.global_position = plane.global_position + position_offset
+
+func process_asault() -> void:
+	if current_distance > next_assault:
+		next_assault = current_distance + assault_distance_trigger
+		var rand: float = randf()
+		if rand < 0.5:
+			assault_right()
+		else:
+			assault_left()
+
+func assault_right() -> void:
+	animation_player.play("right_assault")
+
+func assault_left() -> void:
+	animation_player.play("left_assault")
