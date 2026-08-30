@@ -21,7 +21,7 @@ const POWER_RING = preload("uid://cn2d67illxdd7")
 @export var building_spawner_y: float = -60.0
 @export var building_spawner_z: float = 390.0
 
-@export var building_spawner_try_time: float = 2.0
+@export var building_spawner_distance: float = 10.0
 @export var building_spawner_close_chance: float = 20.0
 
 @export var initial_horizontal_speed: float = 10.0
@@ -37,16 +37,16 @@ const POWER_RING = preload("uid://cn2d67illxdd7")
 
 @export var delete_threshold: float = 10.0
 
-@export var boost_height_velocity: float = 10.0
+@export var boost_height_velocity: float = 12.0
 @export var boost_velocity_mod: float = 2.0
 
-@export var ring_spawn_time: float = 7.0
+@export var ring_spawn_distance: float = 120.0
 @export var ring_spawn_horizontal_range: float = 5.0
 @export var ring_spawn_vertical_range: float = 7.0
 @export var ring_spawn_forward_point: float = 100.0
 
 var building_spawner_cooldown_timer: float = 0.0
-var building_spawner_timer: float = 0.0
+var building_spawn_point: float = 0.0
 var posible_buildings: Array[PackedScene] = [
 	BUILDING_1,
 	BUILDING_2,
@@ -57,7 +57,7 @@ var posible_buildings: Array[PackedScene] = [
 var current_speed: float = initial_vertical_speed
 var current_distance: float = 0.0
 var current_height: float = 0.0
-var ring_counter: float = 0.0
+var ring_spawn_point: float = 0.0
 
 func _ready() -> void:
 	UiSignals.start_game.connect(transition_to_game)
@@ -66,8 +66,8 @@ func _process(delta: float) -> void:
 	if GameManagers.in_menu: return
 	process_scroll_elements(delta)
 	
-	process_building_spawn(delta)
-	process_ring_spawn(delta)
+	process_building_spawn()
+	process_ring_spawn()
 	
 	update_ui_values()
 
@@ -107,10 +107,9 @@ func process_scroll_elements(delta) -> void:
 	if current_height <= 0.0:
 		plane.die()
 
-func process_building_spawn(delta: float) -> void: 
-	building_spawner_timer += delta
-	if building_spawner_timer > 0.0:
-		building_spawner_timer = -max(building_spawner_try_time - (current_distance / 10000), 0.1)
+func process_building_spawn() -> void: 
+	if current_distance > building_spawn_point:
+		building_spawn_point = current_distance + building_spawner_distance
 		var chance: float = randf()
 		if chance > building_spawner_close_chance:
 			spawn_building()
@@ -139,17 +138,15 @@ func transition_to_game() -> void:
 func game_ready() -> void:
 	GameManagers.in_menu = false
 
-func process_ring_spawn(delta: float) -> void:
-	ring_counter += delta
-	if ring_counter > ring_spawn_time:
-		ring_counter = 0.0
+func process_ring_spawn() -> void:
+	if current_distance > ring_spawn_point:
+		ring_spawn_point = current_distance + ring_spawn_distance
 		spawn_ring()
 
 func spawn_ring() -> void:
 	var rand_h: float = (randf() * 2.0) - 1.0
 	var rand_v: float = randf()
 	var position_offset: Vector3 = Vector3(rand_h * ring_spawn_horizontal_range, -rand_v * ring_spawn_vertical_range, ring_spawn_forward_point)
-	print(position_offset)
 	var ring_instance: Node3D = POWER_RING.instantiate()
 	perpendicular_scroll.add_child(ring_instance)
 	ring_instance.global_position = plane.global_position + position_offset

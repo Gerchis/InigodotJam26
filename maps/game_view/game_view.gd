@@ -4,7 +4,8 @@ extends Control
 const GAME_MAP = preload("uid://cbvfkykjbkaje")
 
 @onready var sub_viewport: SubViewport = %SubViewport
-@onready var menu: Menu = %Menu
+@onready var menu: Menu = $Menu
+
 
 func _ready() -> void:
 	GameManagers.return_to_menu.connect(reset_game)

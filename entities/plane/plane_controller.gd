@@ -34,6 +34,9 @@ func _process(delta: float) -> void:
 	process_weight_vector()
 	apply_rotation(delta)
 	process_subtle_movement(delta)
+	
+	if player_has_fall():
+		die()
 
 func _physics_process(delta: float) -> void:
 	if in_boost: return
@@ -79,3 +82,6 @@ func die() -> void:
 	body.get_child(0).disabled = true
 	await get_tree().create_timer(2.0).timeout
 	GameManagers.return_to_menu.emit()
+
+func player_has_fall() -> bool:
+	return player.global_position.y < global_position.y - 1.0
