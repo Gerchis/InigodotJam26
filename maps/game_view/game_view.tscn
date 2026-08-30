@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bu2ffxbek26hq" path="res://maps/game_view/game_view.gd" id="1_73dfm"]
 [ext_resource type="PackedScene" uid="uid://b1wixdbauld73" path="res://maps/ui/ui.tscn" id="2_0d6ao"]
 [ext_resource type="PackedScene" uid="uid://ch8xj3yf3yvni" path="res://maps/menu/menu.tscn" id="3_mbdyd"]
+[ext_resource type="PackedScene" uid="uid://b4o026gkj5swu" path="res://maps/transition/transition.tscn" id="5_6rots"]
 
 [node name="GameView" type="Control" unique_id=59536798]
 layout_mode = 3
@@ -32,9 +33,20 @@ render_target_update_mode = 4
 
 [node name="GameMap" parent="SubViewportContainer/SubViewport" unique_id=1080966284 instance=ExtResource("1_0d6ao")]
 
-[node name="Menu" parent="." unique_id=2104215880 instance=ExtResource("3_mbdyd")]
-visible = false
-layout_mode = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=328221223]
 
-[node name="UI" parent="." unique_id=1532511628 instance=ExtResource("2_0d6ao")]
-layout_mode = 1
+[node name="Menu" parent="CanvasLayer" unique_id=2104215880 instance=ExtResource("3_mbdyd")]
+unique_name_in_owner = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1258285819]
+layer = 2
+
+[node name="UI" parent="CanvasLayer2" unique_id=1532511628 instance=ExtResource("2_0d6ao")]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=1644081554]
+layer = 3
+
+[node name="Transition" parent="CanvasLayer3" unique_id=28669836 instance=ExtResource("5_6rots")]
+unique_name_in_owner = true

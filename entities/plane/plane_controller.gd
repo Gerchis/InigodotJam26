@@ -81,7 +81,7 @@ func die() -> void:
 	player.die()
 	body.get_child(0).disabled = true
 	await get_tree().create_timer(2.0).timeout
-	GameManagers.return_to_menu.emit()
+	GameManagers.start_transition.emit()
 
 func player_has_fall() -> bool:
 	return player.global_position.y < global_position.y - 1.0

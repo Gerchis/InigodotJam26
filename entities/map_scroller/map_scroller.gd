@@ -57,7 +57,7 @@ var posible_buildings: Array[PackedScene] = [
 var current_speed: float = initial_vertical_speed
 var current_distance: float = 0.0
 var current_height: float = 0.0
-var ring_spawn_point: float = 0.0
+var ring_spawn_point: float = 50.0
 
 func _ready() -> void:
 	UiSignals.start_game.connect(transition_to_game)
