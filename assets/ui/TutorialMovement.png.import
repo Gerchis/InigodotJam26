@@ -2,20 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgxnoossvqh76"
-path="res://.godot/imported/Tutorial_001.png-8e67fa5a7f1ad52b3233d32d179cccfe.ctex"
+uid="uid://cx0f4vujt41gj"
+path.s3tc="res://.godot/imported/TutorialMovement.png-17637a3c7920e3abdf6dbc38769de60a.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://assets/ui/Tutorial_001.png"
-dest_files=["res://.godot/imported/Tutorial_001.png-8e67fa5a7f1ad52b3233d32d179cccfe.ctex"]
+source_file="res://assets/ui/TutorialMovement.png"
+dest_files=["res://.godot/imported/TutorialMovement.png-17637a3c7920e3abdf6dbc38769de60a.s3tc.ctex"]
 
 [params]
 
-compress/mode=1
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

@@ -10,7 +10,7 @@ extends CharacterBody3D
 @export var jump_force: float = 2.0
 @export var jump_speed: float = 0.75
 @export var walk_speed: float = 0.5
-@export var accel: float = 1.0
+@export var accel: float = 10.0
 
 @export var attack_range: float = 0.15
 @export var push_force: float = 3.0
@@ -84,6 +84,7 @@ func process_push() -> void:
 		animation_tree.set("parameters/conditions/is_attacking", false)
 
 func push() -> void:
+	if (global_position - player.global_position).length() > attack_range: return
 	var push_direction: Vector3 = global_position.direction_to(player.global_position)
 	push_direction.y = 0.0
 	push_direction = push_direction.normalized()

@@ -62,7 +62,7 @@ var min_speed: float = 0.0
 var current_distance: float = 0.0
 var current_height: float = 0.0
 var ring_spawn_point: float = 50.0
-var next_assault: float = 100.0
+var next_assault: float = 500.0
 
 func _ready() -> void:
 	UiSignals.start_game.connect(transition_to_game)
@@ -81,7 +81,7 @@ func process_scroll_elements(delta) -> void:
 	var plane_roll: float = plane.weight_vector.x
 	var plane_pitch: float = plane.weight_vector.y
 	
-	var base_speed: float = initial_vertical_speed + (current_distance / 100.0)
+	var base_speed: float = initial_vertical_speed + (current_distance / 50.0)
 	var speed_offset: float = base_speed * max_speed_mod * -plane_pitch
 	if plane_pitch < 0.0:
 		speed_offset = base_speed * min_speed_mod * -plane_pitch
@@ -145,6 +145,7 @@ func transition_to_game() -> void:
 
 func game_ready() -> void:
 	GameManagers.in_menu = false
+	plane.show_controls()
 
 func process_ring_spawn() -> void:
 	if current_distance > ring_spawn_point:

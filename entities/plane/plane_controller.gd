@@ -28,6 +28,8 @@ var pitch_offset: float = 0.0
 @onready var mass_center: Marker3D = %MassCenter
 @onready var mesh: MeshInstance3D = %Mesh
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
+@onready var move_controls: MeshInstance3D = %MoveControls
+@onready var attack_controls: MeshInstance3D = %AttackControls
 
 func _process(delta: float) -> void:
 	if GameManagers.in_menu: return
@@ -85,3 +87,12 @@ func die() -> void:
 
 func player_has_fall() -> bool:
 	return player.global_position.y < global_position.y - 1.0
+
+func show_controls() -> void:
+	var tween_in: Tween = create_tween().set_parallel(true)
+	tween_in.tween_property(move_controls.get_active_material(0), "albedo_color", Color("440051"), 0.5)
+	tween_in.tween_property(attack_controls.get_active_material(0), "albedo_color", Color("440051"), 0.5)
+	await get_tree().create_timer(7.0).timeout
+	var tween_out: Tween = create_tween().set_parallel(true)
+	tween_out.tween_property(move_controls.get_active_material(0), "albedo_color", Color("44005100"), 0.5)
+	tween_out.tween_property(attack_controls.get_active_material(0), "albedo_color", Color("44005100"), 0.5)

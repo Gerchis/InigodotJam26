@@ -7,12 +7,13 @@ signal boost
 @export var accel: float = 10.0
 @export var gravity: float = 4.0
 @export var jump_force: float = 2.0
-@export var push_force: float = 1.0
+@export var push_force: float = 3.0
 
 var move_input: Vector2 = Vector2.ZERO
 var face_vector: Vector2 = Vector2.DOWN
 
 var can_move: bool = true
+var pushed_bodies: Array[Node3D] = []
 
 @onready var animation_tree: AnimationTree = %AnimationTree
 @onready var bump_area: Area3D = %BumpArea
@@ -77,8 +78,12 @@ func die() -> void:
 
 func push() -> void:
 	for body in bump_area.get_overlapping_bodies():
-		if not body is CharacterBody3D: continue
+		if not body is CharacterBody3D or body in pushed_bodies: continue
 		var push_direction: Vector3 = global_position.direction_to(body.global_position)
 		push_direction.y = 0.0
 		push_direction = push_direction.normalized()
 		body.velocity = push_direction * push_force
+		pushed_bodies.append(body)
+
+func clean_bodies() -> void:
+	pushed_bodies.clear()
