@@ -18,6 +18,8 @@ extends CharacterBody3D
 var is_jumping: bool = true
 var direction: Vector2 = Vector2.ZERO
 var player: PlayerController
+var map: MapScroller
+
 @export var can_move: bool = true
 
 func _process(delta: float) -> void:
@@ -32,6 +34,7 @@ func _process(delta: float) -> void:
 	
 	process_push()
 	if abs(global_position.y - player.global_position.y) > 5.0:
+		map.end_assault_counter()
 		queue_free()
 
 

@@ -280,7 +280,7 @@ theme_override_font_sizes/font_size = 56
 text = "Play"
 flat = true
 
-[node name="HSlider" type="HSlider" parent="." unique_id=1621563279]
+[node name="VolumeSlider" type="HSlider" parent="." unique_id=1621563279]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -296,7 +296,9 @@ theme_override_icons/grabber_highlight = ExtResource("3_b63vn")
 theme_override_styles/slider = SubResource("StyleBoxFlat_iv5qn")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_b63vn")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_10vvg")
-value = 35.0
+max_value = 1.0
+step = 0.01
+value = 0.5
 
 [node name="Label17" type="Label" parent="." unique_id=359165848]
 layout_mode = 0
@@ -311,9 +313,9 @@ label_settings = SubResource("LabelSettings_13r3h")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1564392571]
 unique_name_in_owner = true
 stream = ExtResource("5_1xoog")
-volume_db = -10.0
 
-[node name="Label18" type="Label" parent="." unique_id=2124572876]
+[node name="HigscoreTitle" type="Label" parent="." unique_id=2124572876]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -353,3 +355,4 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="value_changed" from="VolumeSlider" to="." method="_on_volume_slider_value_changed"]

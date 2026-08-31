@@ -181,8 +181,6 @@ libraries/ = SubResource("AnimationLibrary_8e4vu")
 
 [node name="AudioStreamPlayerSpin" type="AudioStreamPlayer" parent="." unique_id=1930369967]
 unique_name_in_owner = true
-volume_db = -10.0
 
 [node name="AudioStreamBoost" type="AudioStreamPlayer" parent="." unique_id=1739694062]
 unique_name_in_owner = true
-volume_db = -10.0

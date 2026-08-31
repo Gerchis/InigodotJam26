@@ -9,6 +9,9 @@ const BUILDING_5 = preload("uid://bx02448onab6x")
 
 const POWER_RING = preload("uid://cn2d67illxdd7")
 
+const COMBATE_BSO = preload("uid://c73no6brq86d4")
+const GAME_BSO = preload("uid://cmm13cwbdub7n")
+
 @export var paralel_scroll: Node3D
 @export var perpendicular_scroll: Node3D
 @export var falling_scroll: Node3D
@@ -42,10 +45,13 @@ const POWER_RING = preload("uid://cn2d67illxdd7")
 
 @export var ring_spawn_distance: float = 120.0
 @export var ring_spawn_horizontal_range: float = 5.0
-@export var ring_spawn_vertical_range: float = 7.0
+@export var ring_spawn_vertical_range: float = 5.0
 @export var ring_spawn_forward_point: float = 100.0
 
-@export var assault_distance_trigger: float = 300.0
+@export var assault_distance_trigger: float = 400.0
+
+@onready var audio_bso: AudioStreamPlayer = %AudioBSO
+@onready var highscore_mesh: MeshInstance3D = %HighscoreMesh
 
 var building_spawner_cooldown_timer: float = 0.0
 var building_spawn_point: float = 0.0
@@ -63,9 +69,13 @@ var current_distance: float = 0.0
 var current_height: float = 0.0
 var ring_spawn_point: float = 50.0
 var next_assault: float = 500.0
+var assault_counter: int = 0
+
+var bso_sound_point: float = 0.0
 
 func _ready() -> void:
 	UiSignals.start_game.connect(transition_to_game)
+	if GameManagers.highscore == 0.0: highscore_mesh.hide()
 
 func _process(delta: float) -> void:
 	if GameManagers.in_menu: return
@@ -158,7 +168,7 @@ func process_ring_spawn() -> void:
 func spawn_ring() -> void:
 	var rand_h: float = (randf() * 2.0) - 1.0
 	var rand_v: float = randf()
-	var position_offset: Vector3 = Vector3(rand_h * ring_spawn_horizontal_range, -rand_v * ring_spawn_vertical_range, ring_spawn_forward_point)
+	var position_offset: Vector3 = Vector3(rand_h * ring_spawn_horizontal_range, -(rand_v * ring_spawn_vertical_range) - 2, ring_spawn_forward_point)
 	var ring_instance: Node3D = POWER_RING.instantiate()
 	perpendicular_scroll.add_child(ring_instance)
 	ring_instance.global_position = plane.global_position + position_offset
@@ -167,13 +177,40 @@ func process_asault() -> void:
 	if current_distance > next_assault:
 		next_assault = current_distance + assault_distance_trigger
 		var rand: float = randf()
+		
 		if rand < 0.5:
 			assault_right()
 		else:
 			assault_left()
+		
+		add_assault_counter()
 
 func assault_right() -> void:
 	animation_player.play("right_assault")
 
 func assault_left() -> void:
 	animation_player.play("left_assault")
+
+func add_assault_counter() -> void:
+	if assault_counter <= 0:
+		swap_to_combat_music()
+	
+	assault_counter += 1
+
+func end_assault_counter() -> void:
+	assault_counter -= 1
+	if assault_counter <= 0:
+		swap_to_game_music()
+
+func swap_to_combat_music() -> void:
+	bso_sound_point = audio_bso.get_playback_position()
+	await create_tween().tween_property(audio_bso, "volume_linear", 0.0, 0.2).finished
+	audio_bso.stream = COMBATE_BSO
+	audio_bso.play()
+	create_tween().tween_property(audio_bso, "volume_db", -20.0, 0.2)
+
+func swap_to_game_music() -> void:
+	await create_tween().tween_property(audio_bso, "volume_linear", 0.0, 0.2).finished
+	audio_bso.stream = GAME_BSO
+	audio_bso.play(bso_sound_point)
+	create_tween().tween_property(audio_bso, "volume_db", -20.0, 0.2)

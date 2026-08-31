@@ -6,6 +6,7 @@ const ENEMY = preload("uid://bc1hvnm1xintd")
 @onready var sprite_enemy: Sprite3D = %SpriteEnemy
 
 @export var player: PlayerController
+@export var map: MapScroller
 
 func show_sprite() -> void:
 	sprite_enemy.show()
@@ -17,3 +18,4 @@ func swap_enemy(direction: float) -> void:
 	enemy.global_position = sprite_enemy.global_position
 	enemy.jump(direction)
 	enemy.player = player
+	enemy.map = map

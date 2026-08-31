@@ -484,4 +484,3 @@ shape = SubResource("SphereShape3D_j4bll")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=28410928]
 unique_name_in_owner = true
-volume_db = -10.0
