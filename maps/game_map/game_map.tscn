@@ -6,17 +6,20 @@
 [ext_resource type="PackedScene" uid="uid://8qpxbmbxv8np" path="res://entities/buildings/building_2.tscn" id="4_67kxf"]
 [ext_resource type="PackedScene" uid="uid://b4d0bj1ucwwfm" path="res://entities/buildings/building_3.tscn" id="5_owto4"]
 [ext_resource type="PackedScene" uid="uid://e6vofyrhux10" path="res://entities/enemy_plane/enemy_plane.tscn" id="6_67kxf"]
+[ext_resource type="PackedScene" uid="uid://bsqnyq021046f" path="res://entities/cloud/cloud.tscn" id="6_owto4"]
 [ext_resource type="PackedScene" uid="uid://bv5tfpcwpmod0" path="res://entities/buildings/building_4.tscn" id="6_vrrsu"]
 [ext_resource type="PackedScene" uid="uid://bx02448onab6x" path="res://entities/buildings/building_5.tscn" id="7_gel2u"]
 [ext_resource type="Script" uid="uid://b1lj0dmcnroux" path="res://entities/map_scroller/map_scroller.gd" id="8_7cpxw"]
 [ext_resource type="PackedScene" uid="uid://cn2d67illxdd7" path="res://entities/power_ring/power_ring.tscn" id="9_bgx8x"]
 [ext_resource type="ArrayMesh" uid="uid://bda7u7onqwg1s" path="res://assets/gltf_files/cloud/cloud_001_Plane.res" id="9_tc2tb"]
+[ext_resource type="AudioStream" uid="uid://cmm13cwbdub7n" path="res://assets/bso/GameBSO.ogg" id="13_gel2u"]
+[ext_resource type="AudioStream" uid="uid://dg87kjf166voo" path="res://assets/bso/Wind.ogg" id="14_7cpxw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i2q3s"]
-sky_top_color = Color(0.68235296, 0.8862745, 1, 1)
-sky_horizon_color = Color(0.42745098, 0.5019608, 0.98039216, 1)
-ground_bottom_color = Color(0.46760982, 0.6857685, 0.9427556, 1)
-ground_horizon_color = Color(0.5538179, 0.72215736, 0.89495665, 1)
+sky_top_color = Color(0.64220464, 0.9757226, 0.99999994, 1)
+sky_horizon_color = Color(0.6431373, 0.9764706, 1, 1)
+ground_bottom_color = Color(1, 1, 1, 1)
+ground_horizon_color = Color(0.9610881, 0.975637, 0.99223834, 1)
 
 [sub_resource type="Sky" id="Sky_5xtbe"]
 sky_material = SubResource("ProceduralSkyMaterial_i2q3s")
@@ -966,154 +969,175 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -84.92966, 7.8788147)
 mesh = SubResource("PlaneMesh_bpkij")
 
 [node name="Building7" parent="ParalelScroll/MapLimit" unique_id=120542104 instance=ExtResource("3_bgx8x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176.1864, -131.21066, 240.82687)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 232.23453, -131.21066, 240.82687)
 
 [node name="Building8" parent="ParalelScroll/MapLimit" unique_id=1723326108 instance=ExtResource("3_bgx8x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 227.17873, -59.218452, 353.3295)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 283.22687, -59.218452, 353.3295)
 
 [node name="Building9" parent="ParalelScroll/MapLimit" unique_id=1382491079 instance=ExtResource("3_bgx8x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 129.00748, -75.61933, 385.19528)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 185.42003, -75.61933, 443.06583)
 
 [node name="Building10" parent="ParalelScroll/MapLimit" unique_id=1413565754 instance=ExtResource("3_bgx8x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.812851, -88.2644, 317.88742)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.812851, -88.2644, 421.6752)
 
 [node name="Building11" parent="ParalelScroll/MapLimit" unique_id=255125905 instance=ExtResource("3_bgx8x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -112.487625, -63.341286, 385.19528)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -112.487625, -63.341286, 506.21158)
 
 [node name="Building83" parent="ParalelScroll/MapLimit" unique_id=1688634621 instance=ExtResource("3_bgx8x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.97359, -63.341286, 416.10645)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.97359, -63.341286, 537.12274)
 
 [node name="Building12" parent="ParalelScroll/MapLimit" unique_id=691679220 instance=ExtResource("3_bgx8x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -208.81116, -75.61933, 385.19528)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -208.81116, -75.61933, 506.21158)
 
 [node name="Building13" parent="ParalelScroll/MapLimit" unique_id=1065891020 instance=ExtResource("4_67kxf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 227.13496, -90.3689, 102.73123)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 227.13496, -90.3689, 20.72882)
+
+[node name="Building29" parent="ParalelScroll/MapLimit" unique_id=765821053 instance=ExtResource("4_67kxf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 227.13496, -90.3689, -112.91252)
 
 [node name="Building14" parent="ParalelScroll/MapLimit" unique_id=1000860395 instance=ExtResource("4_67kxf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 193.05458, -75.63153, 208.43713)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 249.1027, -75.63153, 208.43713)
+
+[node name="Building112" parent="ParalelScroll/MapLimit" unique_id=636161501 instance=ExtResource("4_67kxf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 249.1027, -75.63153, -65.53516)
 
 [node name="Building15" parent="ParalelScroll/MapLimit" unique_id=1973304687 instance=ExtResource("4_67kxf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 184.68546, -75.63153, 157.43317)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 240.73358, -101.58836, 64.67154)
 
 [node name="Building16" parent="ParalelScroll/MapLimit" unique_id=1053568444 instance=ExtResource("4_67kxf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 151.0405, -75.63153, 251.48486)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 207.08862, -75.63153, 251.48486)
 
 [node name="Building17" parent="ParalelScroll/MapLimit" unique_id=1803915780 instance=ExtResource("4_67kxf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 184.68546, -75.63153, 368.70444)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 240.73358, -75.63153, 368.70444)
 
 [node name="Building18" parent="ParalelScroll/MapLimit" unique_id=812073808 instance=ExtResource("4_67kxf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.27393, -75.63153, 411.48282)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 160.65524, -75.63153, 532.49915)
 
 [node name="Building19" parent="ParalelScroll/MapLimit" unique_id=1551650653 instance=ExtResource("4_67kxf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.3222, -120.430115, 310.1673)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.3222, -120.430115, 413.95508)
 
 [node name="Building20" parent="ParalelScroll/MapLimit" unique_id=1417545248 instance=ExtResource("4_67kxf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -189.53409, -75.63153, 415.67453)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -189.53409, -75.63153, 536.6908)
 
 [node name="Building3" parent="ParalelScroll/MapLimit" unique_id=1570593609 instance=ExtResource("5_owto4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 174.6368, -53.800873, 90.36627)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 174.6368, -53.800873, -7.709038)
 
 [node name="Building21" parent="ParalelScroll/MapLimit" unique_id=31263939 instance=ExtResource("5_owto4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 229.87665, -53.800873, 259.5227)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 285.92477, -53.800873, 259.5227)
 
 [node name="Building22" parent="ParalelScroll/MapLimit" unique_id=796198993 instance=ExtResource("5_owto4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 213.3792, -72.30467, 288.00043)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 269.4273, -72.30467, 288.00043)
 
 [node name="Building23" parent="ParalelScroll/MapLimit" unique_id=923185339 instance=ExtResource("5_owto4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.25333, -102.91185, 295.2472)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.25333, -102.91185, 399.03497)
 
 [node name="Building24" parent="ParalelScroll/MapLimit" unique_id=1009918341 instance=ExtResource("5_owto4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.18698, -116.706474, 334.37604)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.18698, -116.706474, 438.16382)
 
 [node name="Building25" parent="ParalelScroll/MapLimit" unique_id=1228565715 instance=ExtResource("5_owto4")]
-transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 30.238281, -79.52642, 416.31595)
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 256.7306, -79.52642, 520.10376)
 
 [node name="Building26" parent="ParalelScroll/MapLimit" unique_id=407803573 instance=ExtResource("5_owto4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.21521, -79.52642, 423.3169)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.21521, -79.52642, 544.3332)
 
 [node name="Building27" parent="ParalelScroll/MapLimit" unique_id=2021390906 instance=ExtResource("5_owto4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -158.46288, -79.52642, 421.84598)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -158.46288, -79.52642, 542.8623)
 
 [node name="Building67" parent="ParalelScroll/MapLimit" unique_id=304964651 instance=ExtResource("5_owto4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95.08086, -79.52642, 360.09674)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95.08086, -79.52642, 463.88452)
 
 [node name="Building28" parent="ParalelScroll/MapLimit" unique_id=1311117998 instance=ExtResource("5_owto4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.7353, -79.52642, 441.02124)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.7353, -79.52642, 562.03754)
 
 [node name="Building30" parent="ParalelScroll/MapLimit" unique_id=1820805778 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 204.74635, -106.2697, 168.8875)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 260.7945, -106.2697, 138.67857)
 
 [node name="Building31" parent="ParalelScroll/MapLimit" unique_id=1711339011 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 149.06508, -143.33192, 210.03584)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 205.1132, -143.33192, 210.03584)
+
+[node name="Building113" parent="ParalelScroll/MapLimit" unique_id=1795763527 instance=ExtResource("6_vrrsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 137.6483, -143.33192, -104.82976)
+
+[node name="Building120" parent="ParalelScroll/MapLimit" unique_id=696190652 instance=ExtResource("6_vrrsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 222.98102, -74.61906, -2.3873749)
+
+[node name="Building121" parent="ParalelScroll/MapLimit" unique_id=1579687977 instance=ExtResource("6_vrrsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 205.17218, -133.53917, 117.24802)
 
 [node name="Building32" parent="ParalelScroll/MapLimit" unique_id=1573971474 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 227.96857, -145.13614, 185.77567)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 284.0167, -145.13614, 185.77567)
 
 [node name="Building33" parent="ParalelScroll/MapLimit" unique_id=67997996 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.23155, -56.604504, 302.12332)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.23155, -56.604504, 405.9111)
 
 [node name="Building34" parent="ParalelScroll/MapLimit" unique_id=861880234 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 197.36493, -56.60449, 347.74667)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 253.41306, -56.60449, 347.74667)
 
 [node name="Building35" parent="ParalelScroll/MapLimit" unique_id=729087948 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 119.369064, -79.53105, 438.82626)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 119.369064, -79.53105, 559.8425)
 
 [node name="Building36" parent="ParalelScroll/MapLimit" unique_id=521873028 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.20607, -56.60449, 386.79965)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 143.59578, -56.60449, 490.58743)
 
 [node name="Building37" parent="ParalelScroll/MapLimit" unique_id=1696536737 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.768143, -91.888794, 397.13828)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.768143, -91.888794, 518.15454)
 
 [node name="Building38" parent="ParalelScroll/MapLimit" unique_id=1961906993 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.680267, -56.60449, 442.47806)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.680267, -56.60449, 563.4944)
 
 [node name="Building39" parent="ParalelScroll/MapLimit" unique_id=2052818755 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 222.57925, -56.60449, 397.25012)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 278.62738, -56.60449, 397.25012)
 
 [node name="Building40" parent="ParalelScroll/MapLimit" unique_id=1988900731 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.3345, -98.98137, 381.04535)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.3345, -98.98137, 502.06165)
 
 [node name="Building41" parent="ParalelScroll/MapLimit" unique_id=421967887 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -165.01964, -56.60449, 396.5847)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -203.53732, -56.60449, 431.61072)
 
 [node name="Building42" parent="ParalelScroll/MapLimit" unique_id=1532342214 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -129.26619, -56.60449, 413.96945)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -129.26619, -56.60449, 534.9857)
 
 [node name="Building78" parent="ParalelScroll/MapLimit" unique_id=1203848091 instance=ExtResource("3_bgx8x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 193.2098, -85.937935, 303.8017)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 244.59108, -85.93818, 293.75278)
 
 [node name="Building79" parent="ParalelScroll/MapLimit" unique_id=1494354667 instance=ExtResource("3_bgx8x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178.42984, -159.06122, 327.12247)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 234.47797, -159.06122, 327.12247)
 
 [node name="Building80" parent="ParalelScroll/MapLimit" unique_id=2128758354 instance=ExtResource("4_67kxf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 227.42451, -57.350845, 332.15167)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 283.47266, -57.350845, 315.388)
 
 [node name="Building81" parent="ParalelScroll/MapLimit" unique_id=683030470 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 193.14897, -56.604504, 283.61914)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 308.1015, -56.604504, 283.61914)
+
+[node name="Building111" parent="ParalelScroll/MapLimit" unique_id=472515848 instance=ExtResource("6_vrrsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175.40814, -56.604504, -128.75244)
 
 [node name="Building82" parent="ParalelScroll/MapLimit" unique_id=742440839 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 187.32866, -56.604504, 435.79395)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 256.81482, -56.604504, 435.79395)
 
 [node name="Building62" parent="ParalelScroll/MapLimit" unique_id=2079463953 instance=ExtResource("7_gel2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 206.32759, -73.022415, 142.53137)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 206.32759, -108.52751, -39.37021)
 
 [node name="Building63" parent="ParalelScroll/MapLimit" unique_id=1282264538 instance=ExtResource("7_gel2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 163.15088, -102.74198, 154.99548)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 198.6195, -102.74198, 73.73999)
 
 [node name="Building64" parent="ParalelScroll/MapLimit" unique_id=165746001 instance=ExtResource("7_gel2u")]
-transform = Transform3D(0.99999803, -8.691468e-11, -0.001988376, 8.691468e-11, 1, -8.5978255e-14, 0.001988376, -8.5978255e-14, 0.99999803, 227.38454, -48.80612, 234.60109)
+transform = Transform3D(0.99999803, -8.691468e-11, -0.001988376, 8.691468e-11, 1, -8.5978255e-14, 0.001988376, -8.5978255e-14, 0.99999803, 283.43268, -48.80612, 234.60109)
+
+[node name="Building114" parent="ParalelScroll/MapLimit" unique_id=275947530 instance=ExtResource("7_gel2u")]
+transform = Transform3D(0.99999803, -8.691468e-11, -0.001988376, 8.691468e-11, 1, -8.5978255e-14, 0.001988376, -8.5978255e-14, 0.99999803, 283.43268, -48.80612, -2.8115845)
 
 [node name="Building65" parent="ParalelScroll/MapLimit" unique_id=68535047 instance=ExtResource("7_gel2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 198.52704, -48.80612, 256.7915)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 254.57516, -48.80612, 183.53244)
 
 [node name="Building66" parent="ParalelScroll/MapLimit" unique_id=382215630 instance=ExtResource("7_gel2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 172.76164, -101.62041, 293.76276)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214.5962, -101.62041, 132.71805)
 
 [node name="Building86" parent="ParalelScroll/MapLimit" unique_id=1447430243 instance=ExtResource("3_bgx8x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -215.62668, -75.61933, 253.65903)
 
 [node name="Building87" parent="ParalelScroll/MapLimit" unique_id=992067190 instance=ExtResource("3_bgx8x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -178.85544, -59.218452, 353.99567)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -178.85544, -59.218452, 457.78345)
 
 [node name="Building88" parent="ParalelScroll/MapLimit" unique_id=871621597 instance=ExtResource("4_67kxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -155.80902, -92.04034, 219.02539)
@@ -1122,170 +1146,332 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -155.80902, -92.04034, 219.02
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -235.50293, -75.63153, 163.83644)
 
 [node name="Building90" parent="ParalelScroll/MapLimit" unique_id=1746695840 instance=ExtResource("4_67kxf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -219.8565, -73.73538, 280.54575)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -291.96533, -73.73538, 384.33353)
 
 [node name="Building91" parent="ParalelScroll/MapLimit" unique_id=630100038 instance=ExtResource("5_owto4")]
 transform = Transform3D(0.99977064, 9.361522e-10, 0.021416664, -9.361522e-10, 1, -1.0025586e-11, -0.021416664, -1.0025586e-11, 0.99977064, -213.69144, -103.936195, 101.920746)
 
 [node name="Building92" parent="ParalelScroll/MapLimit" unique_id=1275670262 instance=ExtResource("5_owto4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -160.82446, -93.4574, 257.44006)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -286.80743, -93.4574, 322.8998)
 
 [node name="Building93" parent="ParalelScroll/MapLimit" unique_id=916810046 instance=ExtResource("5_owto4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192.65497, -43.74617, 303.3725)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -255.89117, -43.74617, 407.16028)
 
 [node name="Building94" parent="ParalelScroll/MapLimit" unique_id=1072892624 instance=ExtResource("5_owto4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -173.12494, -97.106834, 327.42337)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -173.12494, -97.106834, 431.21115)
 
 [node name="Building95" parent="ParalelScroll/MapLimit" unique_id=1968582672 instance=ExtResource("6_vrrsu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -180.7569, -95.25665, 169.71928)
 
 [node name="Building96" parent="ParalelScroll/MapLimit" unique_id=1644971171 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -236.09451, -56.604504, 208.75885)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -248.29993, -56.604504, 208.75885)
 
 [node name="Building97" parent="ParalelScroll/MapLimit" unique_id=702048559 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -127.0806, -56.604504, 180.90323)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -288.40765, -56.604504, 73.427155)
+
+[node name="Building122" parent="ParalelScroll/MapLimit" unique_id=1172601363 instance=ExtResource("6_vrrsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -288.40765, -56.604504, 171.21536)
 
 [node name="Building98" parent="ParalelScroll/MapLimit" unique_id=2091956374 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -235.13962, -56.604504, 245.47223)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -265.2003, -56.604504, 245.47223)
 
 [node name="Building99" parent="ParalelScroll/MapLimit" unique_id=1356151095 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -208.66922, -56.60449, 363.11874)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -208.66922, -56.60449, 484.13504)
 
 [node name="Building100" parent="ParalelScroll/MapLimit" unique_id=2117528547 instance=ExtResource("3_bgx8x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -212.82437, -61.5456, 319.17377)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -212.82437, -61.5456, 365.30615)
 
 [node name="Building101" parent="ParalelScroll/MapLimit" unique_id=531849782 instance=ExtResource("4_67kxf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -233.60742, -57.350845, 363.31113)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -257.12244, -57.350845, 484.32742)
 
 [node name="Building102" parent="ParalelScroll/MapLimit" unique_id=866224850 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -235.58167, -56.604504, 337.93158)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -235.58167, -56.604504, 441.71936)
 
 [node name="Building103" parent="ParalelScroll/MapLimit" unique_id=529219119 instance=ExtResource("7_gel2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149.00772, -48.80612, 124.724335)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -266.64746, -48.80612, 124.724335)
 
 [node name="Building104" parent="ParalelScroll/MapLimit" unique_id=694751296 instance=ExtResource("7_gel2u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -213.00833, -94.19032, 205.95618)
 
 [node name="Building105" parent="ParalelScroll/MapLimit" unique_id=649934813 instance=ExtResource("7_gel2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -124.48007, -119.26495, 244.42348)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -124.48007, -119.26495, 349.4112)
 
 [node name="Building106" parent="ParalelScroll/MapLimit" unique_id=484774426 instance=ExtResource("7_gel2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -194.67343, -48.80612, 283.6098)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -263.155, -48.80612, 283.6098)
 
 [node name="Building107" parent="ParalelScroll/MapLimit" unique_id=1853698827 instance=ExtResource("7_gel2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -227.02911, -48.80612, 309.13483)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -227.02911, -48.80612, 321.9717)
 
 [node name="Building68" parent="ParalelScroll/MapLimit" unique_id=971860132 instance=ExtResource("7_gel2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 171.09589, -48.80612, 397.35287)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170.19601, -48.80612, 397.35287)
 
 [node name="Building69" parent="ParalelScroll/MapLimit" unique_id=1100951193 instance=ExtResource("7_gel2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 206.3276, -71.44205, 376.4495)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 262.37573, -71.44205, 376.4495)
 
 [node name="Building70" parent="ParalelScroll/MapLimit" unique_id=418018243 instance=ExtResource("7_gel2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.523346, -48.80612, 303.0417)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.523346, -48.80612, 406.82947)
 
 [node name="Building71" parent="ParalelScroll/MapLimit" unique_id=1206885140 instance=ExtResource("7_gel2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.958008, -48.80612, 324.20364)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.958008, -48.80612, 427.99142)
 
 [node name="Building72" parent="ParalelScroll/MapLimit" unique_id=935744006 instance=ExtResource("7_gel2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.100311, -48.80612, 398.14178)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.100311, -48.80612, 554.36743)
 
 [node name="Building73" parent="ParalelScroll/MapLimit" unique_id=892785761 instance=ExtResource("7_gel2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -153.92828, -48.80612, 304.02374)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -153.92828, -48.80612, 407.81152)
 
 [node name="Building74" parent="ParalelScroll/MapLimit" unique_id=1858483038 instance=ExtResource("7_gel2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102.45972, -135.00198, 337.64102)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102.45972, -135.00198, 441.4288)
 
 [node name="Building108" parent="ParalelScroll/MapLimit" unique_id=1870697935 instance=ExtResource("7_gel2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -190.93532, -48.80612, 221.22131)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -294.02667, -48.80612, 221.22131)
 
 [node name="Building75" parent="ParalelScroll/MapLimit" unique_id=1885971625 instance=ExtResource("7_gel2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -142.40492, -48.80612, 381.41025)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -154.90761, -48.80612, 316.8644)
 
 [node name="Building76" parent="ParalelScroll/MapLimit" unique_id=2001165866 instance=ExtResource("7_gel2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -218.8635, -41.013107, 416.68808)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -237.18777, -41.013107, 537.70435)
 
 [node name="Building77" parent="ParalelScroll/MapLimit" unique_id=1097434536 instance=ExtResource("7_gel2u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -161.96913, -102.57811, 353.4952)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -161.96913, -102.57811, 457.283)
 
 [node name="Building43" parent="ParalelScroll/MapLimit" unique_id=1607809752 instance=ExtResource("3_bgx8x")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 159.91788, -61.5456, 370.89322)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 215.966, -61.5456, 411.84253)
 
 [node name="Building44" parent="ParalelScroll/MapLimit" unique_id=744826543 instance=ExtResource("3_bgx8x")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 171.40083, -103.79882, 133.23532)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 171.40083, -103.79882, 33.440704)
 
 [node name="Building45" parent="ParalelScroll/MapLimit" unique_id=1671317643 instance=ExtResource("3_bgx8x")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9.514435, -75.61933, 356.11325)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9.514435, -75.61933, 459.90103)
 
 [node name="Building46" parent="ParalelScroll/MapLimit" unique_id=31450335 instance=ExtResource("4_67kxf")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 115.05838, -118.81357, 228.82587)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 200.53867, -118.81357, 173.2273)
 
 [node name="Building47" parent="ParalelScroll/MapLimit" unique_id=750521592 instance=ExtResource("4_67kxf")]
 transform = Transform3D(-0.0060801515, 0, -0.9999815, 0, 1, 0, 0.9999815, 0, -0.0060801515, 99.058105, -87.96077, 269.317)
 
 [node name="Building109" parent="ParalelScroll/MapLimit" unique_id=1856819187 instance=ExtResource("4_67kxf")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -122.459595, -57.350845, 303.4868)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -122.459595, -57.350845, 407.27457)
 
 [node name="Building48" parent="ParalelScroll/MapLimit" unique_id=206754396 instance=ExtResource("4_67kxf")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 19.84839, -75.63153, 366.3912)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 19.84839, -75.63153, 470.179)
 
 [node name="Building49" parent="ParalelScroll/MapLimit" unique_id=1656266576 instance=ExtResource("4_67kxf")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 60.633945, -75.63153, 338.3266)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 60.633945, -75.63153, 442.11438)
 
 [node name="Building50" parent="ParalelScroll/MapLimit" unique_id=285974013 instance=ExtResource("4_67kxf")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -41.671967, -75.63153, 357.67914)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -41.671967, -75.63153, 461.46692)
 
 [node name="Building84" parent="ParalelScroll/MapLimit" unique_id=228716428 instance=ExtResource("4_67kxf")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -185.08871, -110.7693, 380.07913)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -185.08871, -110.7693, 501.09543)
 
 [node name="Building51" parent="ParalelScroll/MapLimit" unique_id=859810295 instance=ExtResource("5_owto4")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 163.02313, -53.800873, 418.10406)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 246.63614, -102.77748, 102.26547)
+
+[node name="Building115" parent="ParalelScroll/MapLimit" unique_id=1922525510 instance=ExtResource("6_vrrsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 261.02353, -105.67994, -128.87389)
+
+[node name="Building116" parent="ParalelScroll/MapLimit" unique_id=1055221858 instance=ExtResource("7_gel2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 254.8042, -48.216362, -89.60798)
+
+[node name="Building117" parent="ParalelScroll/MapLimit" unique_id=839915979 instance=ExtResource("7_gel2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 228.15407, -81.10593, -137.62904)
+
+[node name="Building118" parent="ParalelScroll/MapLimit" unique_id=521921678 instance=ExtResource("4_67kxf")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 200.7677, -118.22381, -94.325165)
+
+[node name="Building119" parent="ParalelScroll/MapLimit" unique_id=2013578747 instance=ExtResource("5_owto4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 299.17877, -102.18772, -31.208252)
 
 [node name="Building85" parent="ParalelScroll/MapLimit" unique_id=1039535255 instance=ExtResource("5_owto4")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 86.97847, -77.072845, 439.10724)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 86.97847, -77.072845, 560.12354)
 
 [node name="Building52" parent="ParalelScroll/MapLimit" unique_id=1508251691 instance=ExtResource("5_owto4")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 56.003265, -94.2352, 397.51886)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 100.08653, -94.2352, 518.53516)
 
 [node name="Building53" parent="ParalelScroll/MapLimit" unique_id=289714255 instance=ExtResource("5_owto4")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -28.085537, -123.002304, 313.00952)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -28.085537, -123.002304, 416.7973)
 
 [node name="Building54" parent="ParalelScroll/MapLimit" unique_id=1997716649 instance=ExtResource("5_owto4")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -84.73883, -49.14248, 400.63913)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 24.804413, -49.14248, 498.00635)
 
 [node name="Building55" parent="ParalelScroll/MapLimit" unique_id=1262740193 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 141.16006, -89.89693, 351.80212)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 197.20819, -89.89693, 351.80212)
 
 [node name="Building56" parent="ParalelScroll/MapLimit" unique_id=879200270 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 112.61026, -56.604504, 365.0121)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 219.60538, -56.604504, 501.24524)
 
 [node name="Building57" parent="ParalelScroll/MapLimit" unique_id=1772016476 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -98.950264, -56.604504, 292.04715)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -184.91074, -56.604504, 337.19592)
 
 [node name="Building58" parent="ParalelScroll/MapLimit" unique_id=992151019 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 56.12726, -56.604504, 360.4184)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 56.12726, -56.604504, 464.20618)
 
 [node name="Building59" parent="ParalelScroll/MapLimit" unique_id=1534996481 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -135.5186, -82.83339, 338.4196)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -135.5186, -82.83339, 442.20737)
 
 [node name="Building60" parent="ParalelScroll/MapLimit" unique_id=2110458572 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -93.46268, -56.604504, 424.16617)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -93.46268, -56.604504, 545.1825)
 
 [node name="Building110" parent="ParalelScroll/MapLimit" unique_id=785427580 instance=ExtResource("6_vrrsu")]
-transform = Transform3D(0.05295416, 0, -0.99859697, 0, 1, 0, 0.99859697, 0, 0.05295416, -37.05522, -95.61395, 441.20047)
+transform = Transform3D(0.05295416, 0, -0.99859697, 0, 1, 0, 0.99859697, 0, 0.05295416, -37.05522, -95.61395, 562.2168)
 
 [node name="Building61" parent="ParalelScroll/MapLimit" unique_id=1754215641 instance=ExtResource("7_gel2u")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 113.038574, -82.346756, 342.75473)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 113.038574, -82.346756, 446.5425)
+
+[node name="Cloud" parent="ParalelScroll/MapLimit" unique_id=1932594875 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 181.97043, 16.375465, -106.56285)
+
+[node name="Cloud2" parent="ParalelScroll/MapLimit" unique_id=1438195480 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 225.62192, 9.330696, -63.99189)
+
+[node name="Cloud3" parent="ParalelScroll/MapLimit" unique_id=1558631694 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 152.56946, 9.330696, 12.687916)
+
+[node name="Cloud5" parent="ParalelScroll/MapLimit" unique_id=787607415 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 152.56946, 155.82767, 433.33072)
+
+[node name="Cloud6" parent="ParalelScroll/MapLimit" unique_id=930863318 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 20.046555, 155.82767, 433.33072)
+
+[node name="Cloud7" parent="ParalelScroll/MapLimit" unique_id=74417554 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, -141.852, 155.82767, 433.33072)
+
+[node name="Cloud8" parent="ParalelScroll/MapLimit" unique_id=513134518 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, -141.852, 155.82767, 320.827)
+
+[node name="Cloud9" parent="ParalelScroll/MapLimit" unique_id=1277502460 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, -30.219727, 155.82767, 320.827)
+
+[node name="Cloud10" parent="ParalelScroll/MapLimit" unique_id=451443430 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, -30.219727, 155.82767, 218.65463)
+
+[node name="Cloud11" parent="ParalelScroll/MapLimit" unique_id=1294175560 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 89.736176, 155.82767, 218.65463)
+
+[node name="Cloud12" parent="ParalelScroll/MapLimit" unique_id=1795482925 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 89.736176, 155.82767, 267.60208)
+
+[node name="Cloud13" parent="ParalelScroll/MapLimit" unique_id=1920297780 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 217.56483, 155.82767, 267.60208)
+
+[node name="Cloud14" parent="ParalelScroll/MapLimit" unique_id=443374513 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 217.56483, 155.82767, 474.3547)
+
+[node name="Cloud15" parent="ParalelScroll/MapLimit" unique_id=225143172 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 217.56483, 155.82767, 149.31439)
+
+[node name="Cloud16" parent="ParalelScroll/MapLimit" unique_id=94047120 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 140.89299, 155.82767, 149.31439)
+
+[node name="Cloud17" parent="ParalelScroll/MapLimit" unique_id=263548651 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, -247.65997, 155.82767, 409.25366)
+
+[node name="Cloud21" parent="ParalelScroll/MapLimit" unique_id=826438938 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, -202.50766, 155.82767, 275.55283)
+
+[node name="Cloud22" parent="ParalelScroll/MapLimit" unique_id=1609816345 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, -292.74554, 155.82767, 275.55283)
+
+[node name="Cloud23" parent="ParalelScroll/MapLimit" unique_id=4216551 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, -204.13771, 14.862579, 216.10577)
+
+[node name="Cloud24" parent="ParalelScroll/MapLimit" unique_id=668189988 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, -261.0049, 155.82767, 156.83128)
+
+[node name="Cloud25" parent="ParalelScroll/MapLimit" unique_id=1696127227 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, -102.37877, 155.82767, 291.04453)
+
+[node name="Cloud26" parent="ParalelScroll/MapLimit" unique_id=855978263 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 245.15005, 155.82767, 105.56209)
+
+[node name="Cloud27" parent="ParalelScroll/MapLimit" unique_id=1351493476 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 190.27252, 155.82767, 31.695267)
+
+[node name="Cloud28" parent="ParalelScroll/MapLimit" unique_id=865901190 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 190.27252, 155.82767, -48.67405)
+
+[node name="Cloud29" parent="ParalelScroll/MapLimit" unique_id=820973924 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 403.21417, 75.65099, -15.808006)
+
+[node name="Cloud30" parent="ParalelScroll/MapLimit" unique_id=2053483326 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 206.83763, -7.511551, 87.15612)
+
+[node name="Cloud40" parent="ParalelScroll/MapLimit" unique_id=1136049591 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 206.83763, 49.524162, 231.83206)
+
+[node name="Cloud45" parent="ParalelScroll/MapLimit" unique_id=1455887272 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 206.83763, -48.679947, 146.07233)
+
+[node name="Cloud41" parent="ParalelScroll/MapLimit" unique_id=908197932 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 69.33096, 49.524162, 381.81833)
+
+[node name="Cloud46" parent="ParalelScroll/MapLimit" unique_id=1778138569 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 153.39877, 8.520683, 381.81833)
+
+[node name="Cloud47" parent="ParalelScroll/MapLimit" unique_id=1899665240 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 38.92659, 8.520683, 381.81833)
+
+[node name="Cloud42" parent="ParalelScroll/MapLimit" unique_id=968238900 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, -23.871063, -49.227547, 381.81833)
+
+[node name="Cloud48" parent="ParalelScroll/MapLimit" unique_id=1455159603 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, -109.18789, -36.224335, 381.81833)
+
+[node name="Cloud43" parent="ParalelScroll/MapLimit" unique_id=1516410293 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, -200.45885, 15.520195, 133.14185)
+
+[node name="Cloud44" parent="ParalelScroll/MapLimit" unique_id=1422804788 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 238.50597, 70.49095, 133.14185)
+
+[node name="Cloud31" parent="ParalelScroll/MapLimit" unique_id=462144969 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 298.08142, 6.9909744, 16.90483)
+
+[node name="Cloud32" parent="ParalelScroll/MapLimit" unique_id=1599031735 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 378.9343, 6.9909744, -158.71378)
+
+[node name="Cloud33" parent="ParalelScroll/MapLimit" unique_id=989206458 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 378.9343, 110.357445, -64.79021)
+
+[node name="Cloud37" parent="ParalelScroll/MapLimit" unique_id=1628420594 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 378.9343, 110.357445, 183.12546)
+
+[node name="Cloud38" parent="ParalelScroll/MapLimit" unique_id=1375355369 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 378.9343, 156.11823, 111.933105)
+
+[node name="Cloud39" parent="ParalelScroll/MapLimit" unique_id=801925396 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 378.9343, 156.11823, 245.20744)
+
+[node name="Cloud34" parent="ParalelScroll/MapLimit" unique_id=2109948875 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 104.1478, 32.4321, -359.7494)
+
+[node name="Cloud35" parent="ParalelScroll/MapLimit" unique_id=869532318 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 276.94086, 29.612503, -353.38266)
+
+[node name="Cloud36" parent="ParalelScroll/MapLimit" unique_id=1649400713 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 61.309143, 155.82767, 545.2262)
+
+[node name="Cloud18" parent="ParalelScroll/MapLimit" unique_id=1381319509 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, -193.18697, -53.923054, 149.31439)
+
+[node name="Cloud19" parent="ParalelScroll/MapLimit" unique_id=646653068 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, -212.95078, 155.82767, 241.95883)
+
+[node name="Cloud20" parent="ParalelScroll/MapLimit" unique_id=1852349299 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, -100.35123, 155.82767, 188.64133)
+
+[node name="Cloud4" parent="ParalelScroll/MapLimit" unique_id=968780546 instance=ExtResource("6_owto4")]
+transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 0.99999887, 196.22095, 62.48877, 21.38509)
 
 [node name="FallingScroll" type="Node3D" parent="ParalelScroll" unique_id=1479074396]
 
 [node name="RightPlane" parent="ParalelScroll/FallingScroll" unique_id=1339234768 node_paths=PackedStringArray("player") instance=ExtResource("6_67kxf")]
-transform = Transform3D(0.99999976, 0, 0, 0, 0.98400384, 0.17814481, 0, -0.17814472, 0.9840044, -1.3301382, 0.4037876, 0.28319597)
+transform = Transform3D(0.99999976, 0, 0, 0, 0.9840038, 0.17814481, 0, -0.17814471, 0.9840044, -1.3301382, 0.4037876, 0.28319597)
 visible = false
 player = NodePath("../Player")
 
 [node name="LeftPlane" parent="ParalelScroll/FallingScroll" unique_id=261683673 node_paths=PackedStringArray("player") instance=ExtResource("6_67kxf")]
-transform = Transform3D(0.9999999, 0, 0, 0, 0.98400396, 0.1781448, 0, -0.17814474, 0.98400426, 1.4177082, 0.4037876, 0.28319597)
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9840039, 0.1781448, 0, -0.17814474, 0.98400426, 1.4177082, 0.4037876, 0.28319597)
 visible = false
 player = NodePath("../Player")
 
@@ -1334,7 +1520,7 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.81488, -53.800873, 145.24263)
 
 [node name="Building5" parent="PerpendicularScroll" unique_id=1776071547 instance=ExtResource("5_owto4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.318954, -53.800873, 289.5899)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.318954, -53.800873, 393.3777)
 
 [node name="Building7" parent="PerpendicularScroll" unique_id=1220571130 instance=ExtResource("3_bgx8x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.854416, -75.61933, 79.85904)
@@ -1460,3 +1646,13 @@ mesh = ExtResource("9_tc2tb")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1201130782]
 libraries/ = SubResource("AnimationLibrary_n5cf4")
 autoplay = &"menu"
+
+[node name="AudioBSO" type="AudioStreamPlayer" parent="." unique_id=1491987728]
+stream = ExtResource("13_gel2u")
+volume_db = -35.0
+autoplay = true
+
+[node name="AudioViento" type="AudioStreamPlayer" parent="." unique_id=718601280]
+stream = ExtResource("14_7cpxw")
+volume_db = -5.0
+autoplay = true
