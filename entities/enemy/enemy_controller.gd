@@ -5,6 +5,7 @@ extends CharacterBody3D
 @onready var weight_system: WeightSystem = $weight_system
 @onready var enemy_sprite: Sprite3D = %EnemySprite
 @onready var col: CollisionShape3D = %Col
+@onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 
 @export var gravity: float = 4.0
 @export var jump_force: float = 2.0
@@ -69,6 +70,7 @@ func process_gravity(delta: float) -> void:
 	velocity.y -= gravity * delta
 
 func jump(dir: float = 0.0) -> void:
+	play_sound()
 	velocity.y = jump_force
 	direction = Vector2.RIGHT * dir
 	if dir >= 0.0:
@@ -88,6 +90,7 @@ func process_push() -> void:
 
 func push() -> void:
 	if (global_position - player.global_position).length() > attack_range: return
+	play_sound()
 	var push_direction: Vector3 = global_position.direction_to(player.global_position)
 	push_direction.y = 0.0
 	push_direction = push_direction.normalized()
@@ -98,3 +101,6 @@ func die() -> void:
 	animation_tree.set("parameters/conditions/is_walking", false)
 	jump()
 	col.disabled = true
+
+func play_sound() -> void:
+	audio_stream_player.play()

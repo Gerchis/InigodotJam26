@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c211sxybdwnbg" path="res://entities/enemy/enemy_controller.gd" id="1_3fvr7"]
 [ext_resource type="Texture2D" uid="uid://bk5svlrv88pa8" path="res://assets/spritesheet/spriteSheet_Enemigo_001.png" id="1_ksmh7"]
 [ext_resource type="PackedScene" uid="uid://0v7w4od8b2ij" path="res://entities/weight_system/weight_system.tscn" id="2_im2q6"]
+[ext_resource type="AudioStream" uid="uid://fmd2tfb1xxhs" path="res://assets/sound/Enemigo.ogg" id="4_dt443"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_im2q6"]
 radius = 0.038085938
@@ -407,3 +408,8 @@ parameters/conditions/jump_left = false
 parameters/conditions/jump_right = false
 parameters/bump/blend_position = 0.0
 parameters/walk/blend_position = 0.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1983044432]
+unique_name_in_owner = true
+stream = ExtResource("4_dt443")
+volume_db = -5.0

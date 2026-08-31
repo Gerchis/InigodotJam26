@@ -22,6 +22,7 @@ const GAME_BSO = preload("uid://cmm13cwbdub7n")
 @export var building_spawner_x_range: float = 50.0
 @export var building_spawner_outer_x_range: float = 180.0
 @export var building_spawner_y: float = -60.0
+@export var building_spawner_y_range: float = -70.0
 @export var building_spawner_z: float = 390.0
 
 @export var building_spawner_distance: float = 10.0
@@ -50,8 +51,13 @@ const GAME_BSO = preload("uid://cmm13cwbdub7n")
 
 @export var assault_distance_trigger: float = 400.0
 
+@export var fov_modification: float = 15.0
+@export var cam_distance_offset: float = 0.2
+@export var cam_speed: float = 10.0
+
 @onready var audio_bso: AudioStreamPlayer = %AudioBSO
 @onready var highscore_mesh: MeshInstance3D = %HighscoreMesh
+@onready var camera: Camera3D = %Camera
 
 var building_spawner_cooldown_timer: float = 0.0
 var building_spawn_point: float = 0.0
@@ -73,6 +79,9 @@ var assault_counter: int = 0
 
 var bso_sound_point: float = 0.0
 
+var base_fov: float = 75.0
+var base_cam_distance: float = -1.65
+
 func _ready() -> void:
 	UiSignals.start_game.connect(transition_to_game)
 	if GameManagers.highscore == 0.0: highscore_mesh.hide()
@@ -84,6 +93,7 @@ func _process(delta: float) -> void:
 	process_building_spawn()
 	process_ring_spawn()
 	process_asault()
+	process_cam_effects(delta)
 	
 	update_ui_values()
 
@@ -142,8 +152,10 @@ func spawn_building(in_range: bool = true) -> void:
 	if not in_range:
 		x_pos = random_x * building_spawner_outer_x_range
 	
+	var random_y: float = randf()
+	
 	perpendicular_scroll.add_child(buiding_instance)
-	buiding_instance.global_position = Vector3(x_pos, building_spawner_y, building_spawner_z)
+	buiding_instance.global_position = Vector3(x_pos, building_spawner_y + (random_y * building_spawner_y_range), building_spawner_z)
 
 func update_ui_values() -> void:
 	UiSignals.update_distance.emit(current_distance)
@@ -214,3 +226,13 @@ func swap_to_game_music() -> void:
 	audio_bso.stream = GAME_BSO
 	audio_bso.play(bso_sound_point)
 	create_tween().tween_property(audio_bso, "volume_db", -20.0, 0.2)
+
+func process_cam_effects(delta: float) -> void:
+	var cam_effects_mod: float = remap(current_speed, max_speed, max_speed * 2.0, 0.0, 1.0)
+	cam_effects_mod = clampf(cam_effects_mod, 0.0, 1.0)
+	var fov_offset: float = cam_effects_mod * fov_modification
+	
+	var current_fov: float = move_toward(camera.fov, base_fov + fov_offset, cam_speed * delta)
+	camera.fov = current_fov
+	var dist_offset: float = remap(current_fov, base_fov, base_fov + fov_modification, 0.0, 1.0) * cam_distance_offset
+	camera.global_position.z = base_cam_distance + dist_offset

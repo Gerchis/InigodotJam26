@@ -134,7 +134,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("ParalelScroll/FallingScroll/Camera3D:position")
+tracks/6/path = NodePath("ParalelScroll/FallingScroll/Camera:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -146,7 +146,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("ParalelScroll/FallingScroll/Camera3D:rotation")
+tracks/7/path = NodePath("ParalelScroll/FallingScroll/Camera:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -158,7 +158,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("ParalelScroll/FallingScroll/Camera3D:fov")
+tracks/8/path = NodePath("ParalelScroll/FallingScroll/Camera:fov")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -893,7 +893,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("ParalelScroll/FallingScroll/Camera3D:position")
+tracks/6/path = NodePath("ParalelScroll/FallingScroll/Camera:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -905,7 +905,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("ParalelScroll/FallingScroll/Camera3D:rotation")
+tracks/7/path = NodePath("ParalelScroll/FallingScroll/Camera:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -917,7 +917,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("ParalelScroll/FallingScroll/Camera3D:fov")
+tracks/8/path = NodePath("ParalelScroll/FallingScroll/Camera:fov")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -1474,13 +1474,13 @@ transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 
 [node name="FallingScroll" type="Node3D" parent="ParalelScroll" unique_id=1479074396]
 
 [node name="RightPlane" parent="ParalelScroll/FallingScroll" unique_id=1339234768 node_paths=PackedStringArray("player", "map") instance=ExtResource("6_67kxf")]
-transform = Transform3D(0.99999976, 0, 0, 0, 0.9840034, 0.17814481, 0, -0.17814465, 0.9840044, -1.3301382, 0.4037876, 0.28319597)
+transform = Transform3D(0.99999976, 0, 0, 0, 0.98400325, 0.17814481, 0, -0.17814462, 0.9840044, -1.3301382, 0.4037876, 0.28319597)
 visible = false
 player = NodePath("../Player")
 map = NodePath("../../../MapScroller")
 
 [node name="LeftPlane" parent="ParalelScroll/FallingScroll" unique_id=261683673 node_paths=PackedStringArray("player", "map") instance=ExtResource("6_67kxf")]
-transform = Transform3D(0.9999999, 0, 0, 0, 0.98400354, 0.1781448, 0, -0.17814466, 0.98400426, 1.4177082, 0.4037876, 0.28319597)
+transform = Transform3D(0.9999999, 0, 0, 0, 0.98400337, 0.1781448, 0, -0.17814463, 0.98400426, 1.4177082, 0.4037876, 0.28319597)
 visible = false
 player = NodePath("../Player")
 map = NodePath("../../../MapScroller")
@@ -1508,7 +1508,8 @@ transform = Transform3D(1.4777448, 0, 0, 0, 1.4777448, 0, 0, 0, 1.4777448, -0.45
 transform = Transform3D(0.97306585, -0.23052742, 0, 0.23052742, 0.97306585, 0, 0, 0, 1, -0.03264284, -0.064721584, 0.39374775)
 player = NodePath("../Player")
 
-[node name="Camera3D" type="Camera3D" parent="ParalelScroll/FallingScroll" unique_id=2077820677]
+[node name="Camera" type="Camera3D" parent="ParalelScroll/FallingScroll" unique_id=2077820677]
+unique_name_in_owner = true
 transform = Transform3D(0.9731982, 0.08130994, -0.21511386, 0, 0.93540734, 0.3535708, 0.22996801, -0.34409428, 0.91033715, -1.9671715, 0.5992451, 2.8961277)
 current = true
 fov = 50.0

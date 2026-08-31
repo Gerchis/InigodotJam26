@@ -152,13 +152,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0024416447)
 collision_layer = 7
 
 [node name="Col" type="CollisionShape3D" parent="Body" unique_id=1481651853]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02922535, -0.21217996, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02922535, -0.23029128, 0)
 shape = SubResource("ConcavePolygonShape3D_dq0fv")
 
 [node name="Mesh" type="MeshInstance3D" parent="." unique_id=1163163540]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0670774)
-layers = 3
+layers = 7
 mesh = ExtResource("2_jl0ao")
 
 [node name="MoveControls" type="MeshInstance3D" parent="Mesh" unique_id=313823770]
