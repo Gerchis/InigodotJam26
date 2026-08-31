@@ -3,6 +3,9 @@ extends CharacterBody3D
 
 signal boost
 
+const ATACAR = preload("uid://355pctvq1pre")
+const SALTAR = preload("uid://dmvkvhkh65q5")
+
 @export var speed: float = 1.0
 @export var accel: float = 10.0
 @export var gravity: float = 4.0
@@ -17,6 +20,8 @@ var pushed_bodies: Array[Node3D] = []
 
 @onready var animation_tree: AnimationTree = %AnimationTree
 @onready var bump_area: Area3D = %BumpArea
+@onready var animation_player: AnimationPlayer = %AnimationPlayer
+@onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 
 func _process(delta: float) -> void:
 	if GameManagers.in_menu: return
@@ -53,11 +58,14 @@ func process_facing() -> void:
 
 func jump() -> void:
 	velocity.y = jump_force
+	play_jump_sound()
 	boost.emit()
 
 func attack() -> void:
 	animation_tree.set("parameters/conditions/is_attacking", true)
 	animation_tree.set.call_deferred("parameters/conditions/is_attacking", false)
+	await get_tree().create_timer(0.5).timeout
+	continue_moving()
 
 func stop_moving() -> void:
 	can_move = false
@@ -87,3 +95,11 @@ func push() -> void:
 
 func clean_bodies() -> void:
 	pushed_bodies.clear()
+
+func play_attack_sound() -> void:
+	audio_stream_player.stream = ATACAR
+	audio_stream_player.play()
+
+func play_jump_sound() -> void:
+	audio_stream_player.stream = SALTAR
+	audio_stream_player.play()

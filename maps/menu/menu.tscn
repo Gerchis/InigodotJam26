@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c5ib124nqmvhk" path="res://maps/menu/menu.gd" id="1_10vvg"]
 [ext_resource type="FontFile" uid="uid://cs4polfbiabkx" path="res://assets/font/kg_second_chances/KGSecondChancesSolid.ttf" id="2_iv5qn"]
 [ext_resource type="Texture2D" uid="uid://c7x7e2kvywnia" path="res://assets/ui/GrabberSlider_001.png" id="3_b63vn"]
+[ext_resource type="AudioStream" uid="uid://bagi3fbsd3ygr" path="res://assets/sound/BtnSound.ogg" id="5_1xoog"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pl81p"]
 line_spacing = -22.2
@@ -288,5 +289,10 @@ offset_bottom = 456.0
 rotation = -0.17366052
 text = "Volume"
 label_settings = SubResource("LabelSettings_13r3h")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1564392571]
+unique_name_in_owner = true
+stream = ExtResource("5_1xoog")
+volume_db = -10.0
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

@@ -1,6 +1,9 @@
 class_name PlaneController
 extends Node3D
 
+const ARO_PASAR = preload("uid://dakp4efmi1ojr")
+const GIRO_NAVE = preload("uid://00lew1jr1w87")
+
 @export var player: PlayerController
 
 @export var horizontal_rotation_curve: Curve
@@ -30,6 +33,8 @@ var pitch_offset: float = 0.0
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 @onready var move_controls: MeshInstance3D = %MoveControls
 @onready var attack_controls: MeshInstance3D = %AttackControls
+@onready var audio_stream_player_spin: AudioStreamPlayer = %AudioStreamPlayerSpin
+@onready var audio_stream_boost: AudioStreamPlayer = %AudioStreamBoost
 
 func _process(delta: float) -> void:
 	if GameManagers.in_menu: return
@@ -75,6 +80,10 @@ func process_subtle_movement(delta) -> void:
 func boost() -> void:
 	animation_player.play("boost")
 	player.jump()
+	audio_stream_boost.stream = ARO_PASAR
+	audio_stream_player_spin.stream = GIRO_NAVE
+	audio_stream_boost.play()
+	audio_stream_player_spin.play()
 
 func die() -> void:
 	in_boost = true

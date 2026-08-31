@@ -178,3 +178,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.34339315)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1632211291]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_8e4vu")
+
+[node name="AudioStreamPlayerSpin" type="AudioStreamPlayer" parent="." unique_id=1930369967]
+unique_name_in_owner = true
+volume_db = -10.0
+
+[node name="AudioStreamBoost" type="AudioStreamPlayer" parent="." unique_id=1739694062]
+unique_name_in_owner = true
+volume_db = -10.0
