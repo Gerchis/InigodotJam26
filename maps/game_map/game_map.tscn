@@ -1466,12 +1466,12 @@ transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 
 [node name="FallingScroll" type="Node3D" parent="ParalelScroll" unique_id=1479074396]
 
 [node name="RightPlane" parent="ParalelScroll/FallingScroll" unique_id=1339234768 node_paths=PackedStringArray("player") instance=ExtResource("6_67kxf")]
-transform = Transform3D(0.99999976, 0, 0, 0, 0.9840038, 0.17814481, 0, -0.17814471, 0.9840044, -1.3301382, 0.4037876, 0.28319597)
+transform = Transform3D(0.99999976, 0, 0, 0, 0.9840037, 0.17814481, 0, -0.17814471, 0.9840044, -1.3301382, 0.4037876, 0.28319597)
 visible = false
 player = NodePath("../Player")
 
 [node name="LeftPlane" parent="ParalelScroll/FallingScroll" unique_id=261683673 node_paths=PackedStringArray("player") instance=ExtResource("6_67kxf")]
-transform = Transform3D(0.9999999, 0, 0, 0, 0.9840039, 0.1781448, 0, -0.17814474, 0.98400426, 1.4177082, 0.4037876, 0.28319597)
+transform = Transform3D(0.9999999, 0, 0, 0, 0.98400384, 0.1781448, 0, -0.17814472, 0.98400426, 1.4177082, 0.4037876, 0.28319597)
 visible = false
 player = NodePath("../Player")
 
