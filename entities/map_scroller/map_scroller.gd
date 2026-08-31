@@ -139,6 +139,8 @@ func update_ui_values() -> void:
 	UiSignals.update_distance.emit(current_distance)
 	UiSignals.update_height.emit(current_height)
 	UiSignals.update_velocity.emit(current_speed, max_speed * 2.0, min_speed)
+	if current_distance > GameManagers.highscore:
+		GameManagers.highscore = floori(current_distance)
 
 func transition_to_game() -> void:
 	animation_player.play("transition")
@@ -146,6 +148,7 @@ func transition_to_game() -> void:
 func game_ready() -> void:
 	GameManagers.in_menu = false
 	plane.show_controls()
+	%AudioViento.play()
 
 func process_ring_spawn() -> void:
 	if current_distance > ring_spawn_point:
