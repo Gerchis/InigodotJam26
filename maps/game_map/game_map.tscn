@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://b1lj0dmcnroux" path="res://entities/map_scroller/map_scroller.gd" id="8_7cpxw"]
 [ext_resource type="PackedScene" uid="uid://cn2d67illxdd7" path="res://entities/power_ring/power_ring.tscn" id="9_bgx8x"]
 [ext_resource type="ArrayMesh" uid="uid://bda7u7onqwg1s" path="res://assets/gltf_files/cloud/cloud_001_Plane.res" id="9_tc2tb"]
+[ext_resource type="ArrayMesh" uid="uid://ctetsnn4htmi8" path="res://assets/gltf_files/highscore/HighScore(0_0_1)_Cube_001.res" id="13_vrrsu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i2q3s"]
 sky_top_color = Color(0.64220464, 0.9757226, 0.99999994, 1)
@@ -32,7 +33,7 @@ fog_enabled = true
 fog_light_color = Color(1, 1, 1, 1)
 fog_density = 0.0
 fog_sky_affect = 0.0
-fog_height = -60.0
+fog_height = -45.0
 fog_height_density = 0.15
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_bpkij"]
@@ -1485,12 +1486,12 @@ transform = Transform3D(0.99999887, 0, -0.0015230477, 0, 1, 0, 0.0015230477, 0, 
 [node name="FallingScroll" type="Node3D" parent="ParalelScroll" unique_id=1479074396]
 
 [node name="RightPlane" parent="ParalelScroll/FallingScroll" unique_id=1339234768 node_paths=PackedStringArray("player") instance=ExtResource("6_67kxf")]
-transform = Transform3D(0.99999976, 0, 0, 0, 0.98400366, 0.17814481, 0, -0.1781447, 0.9840044, -1.3301382, 0.4037876, 0.28319597)
+transform = Transform3D(0.99999976, 0, 0, 0, 0.9840036, 0.17814481, 0, -0.17814468, 0.9840044, -1.3301382, 0.4037876, 0.28319597)
 visible = false
 player = NodePath("../Player")
 
 [node name="LeftPlane" parent="ParalelScroll/FallingScroll" unique_id=261683673 node_paths=PackedStringArray("player") instance=ExtResource("6_67kxf")]
-transform = Transform3D(0.9999999, 0, 0, 0, 0.9840038, 0.1781448, 0, -0.17814471, 0.98400426, 1.4177082, 0.4037876, 0.28319597)
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9840037, 0.1781448, 0, -0.17814471, 0.98400426, 1.4177082, 0.4037876, 0.28319597)
 visible = false
 player = NodePath("../Player")
 
@@ -1565,8 +1566,7 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 10.5
 [node name="Intro" type="Node3D" parent="." unique_id=706364387]
 
 [node name="Camera3D" type="Camera3D" parent="Intro" unique_id=1072100772]
-transform = Transform3D(0.9731982, 0.081309974, -0.21511386, 0, 0.93540776, 0.3535708, 0.22996801, -0.34409446, 0.91033715, -1.9671715, 0.5992451, 2.8961277)
-visible = false
+transform = Transform3D(0.9731982, 0.081309974, -0.21511386, 0, 0.93540776, 0.3535708, 0.22996801, -0.34409446, 0.91033715, -1.967, -50, 2.896)
 fov = 50.0
 
 [node name="Building4" parent="Intro" unique_id=1617035682 instance=ExtResource("6_vrrsu")]
@@ -1662,6 +1662,10 @@ mesh = ExtResource("9_tc2tb")
 transform = Transform3D(-0.037242107, 0.1890447, -1.6126269, -1.3093711, -0.06491645, 0.037641536, -0.052272804, 1.4913849, 0.20605156, -5.889745, -5.267175, -3.7009506)
 mesh = ExtResource("9_tc2tb")
 
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Intro" unique_id=389795980]
+transform = Transform3D(-0.6195204, 0, -1.5211583, 0, 1.6424763, 0, 1.5211583, 0, -0.6195204, 8.634771, -13.442547, -10.524159)
+mesh = ExtResource("13_vrrsu")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1201130782]
 libraries/ = SubResource("AnimationLibrary_n5cf4")
 autoplay = &"menu"
@@ -1673,7 +1677,7 @@ autoplay = true
 parameters/looping = true
 
 [node name="AudioViento" type="AudioStreamPlayer" parent="." unique_id=718601280]
+unique_name_in_owner = true
 stream = SubResource("AudioStreamOggVorbis_vrrsu")
 volume_db = -5.0
-autoplay = true
 parameters/looping = true
